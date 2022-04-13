@@ -1,0 +1,29 @@
+{
+  "name": "rise-of-the-robots",
+  "version": "1.0.0",
+  "description": "Jamstack Creativity, Performance Optimization and Accessibility",
+  "main": "index.js",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulieScanlon/rise-of-the-robots.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaulieScanlon/rise-of-the-robots/issues"
+  },
+  "homepage": "https://github.com/PaulieScanlon/rise-of-the-robots#readme",
+  "dependencies": {
+    "gatsby": "^4.12.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
