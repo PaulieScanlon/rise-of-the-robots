@@ -1,11 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const Seo = ({ customTitle, customDescription, customUrl, customImage }) => {
   const {
-    contentfulSiteMetadata: { url, title, description, image, language, keywords }
+    contentfulSiteMetadata: {
+      url,
+      title,
+      description,
+      image,
+      language,
+      keywords,
+    },
   } = useStaticQuery(graphql`
     {
       contentfulSiteMetadata {
@@ -13,7 +20,7 @@ const Seo = ({ customTitle, customDescription, customUrl, customImage }) => {
         title
         description
         image {
-          gatsbyImage(layout: FIXED, width: 1200)
+          gatsbyImage(layout: FIXED, width: 1024)
         }
         language
         keywords {
@@ -21,12 +28,14 @@ const Seo = ({ customTitle, customDescription, customUrl, customImage }) => {
         }
       }
     }
-  `);
+  `)
 
-  const seoTitle = customTitle || title;
-  const seoDescription = customDescription ? customDescription : description;
-  const seoUrl = customUrl ? `${url}${customUrl}` : url;
-  const seoImage = customImage ? `${url}${customImage}` : `${url}${image.gatsbyImage.images.fallback.src}`;
+  const seoTitle = customTitle || title
+  const seoDescription = customDescription ? customDescription : description
+  const seoUrl = customUrl ? `${url}${customUrl}` : url
+  const seoImage = customImage
+    ? `${url}${customImage}`
+    : `${url}${image.gatsbyImage.images.fallback.src}`
 
   return (
     <Helmet>
@@ -40,7 +49,10 @@ const Seo = ({ customTitle, customDescription, customUrl, customImage }) => {
       <meta name="title" content={seoTitle} />
       <meta name="description" content={seoDescription} />
       <meta name="image" content={seoImage} />
-      <meta name="keywords" content={keywords ? keywords.items.join(', ') : null} />
+      <meta
+        name="keywords"
+        content={keywords ? keywords.items.join(', ') : null}
+      />
 
       {/* Open Graph / Facebook  */}
       <meta property="og:type" content="website" />
@@ -57,11 +69,23 @@ const Seo = ({ customTitle, customDescription, customUrl, customImage }) => {
       <meta name="twitter:image" content={seoImage} />
 
       {/* favicon */}
-      <link rel="icon" type="image/png" sizes="16x16" href={`/favicon-16x16.png`} data-react-helmet="true" />
-      <link rel="icon" type="image/png" sizes="32x32" href={`/favicon-32x32.png`} data-react-helmet="true" />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href={`/favicon-16x16.png`}
+        data-react-helmet="true"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href={`/favicon-32x32.png`}
+        data-react-helmet="true"
+      />
     </Helmet>
-  );
-};
+  )
+}
 
 Seo.propTypes = {
   /** A custom HTML title that overwrites the default title */
@@ -71,7 +95,7 @@ Seo.propTypes = {
   /** A custom meta url that overwrites the default url */
   customUrl: PropTypes.string,
   /** A custom open graph image that overwrites the default image */
-  customImage: PropTypes.any
-};
+  customImage: PropTypes.any,
+}
 
-export default Seo;
+export default Seo
