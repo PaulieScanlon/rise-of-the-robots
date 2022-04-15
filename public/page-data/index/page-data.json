@@ -1,6 +1,5 @@
 {
-  "componentChunkName": "component---src-pages-index-js",
-  "path": "/",
-  "result": { "pageContext": {} },
-  "staticQueryHashes": ["598772102"]
-}
+    "componentChunkName": "component---src-pages-index-js",
+    "path": "/",
+    "result": {"pageContext":{}},
+    "staticQueryHashes": ["91528709"]}

@@ -20,7 +20,7 @@ const Seo = ({ customTitle, customDescription, customUrl, customImage }) => {
         title
         description
         image {
-          gatsbyImage(layout: FIXED, width: 1200)
+          gatsbyImage(layout: FIXED, width: 1024)
         }
         language
         keywords {
