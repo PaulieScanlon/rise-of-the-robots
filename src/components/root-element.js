@@ -5,7 +5,7 @@ const RootElement = ({ children }) => {
   return (
     <Fragment>
       <Seo />
-      <main>{children}</main>
+      <main className="min-w-[320px]">{children}</main>
     </Fragment>
   )
 }

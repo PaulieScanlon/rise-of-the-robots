@@ -8,6 +8,7 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     'gatsby-plugin-gatsby-cloud',
+    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
