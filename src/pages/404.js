@@ -5,9 +5,9 @@ const Page = () => {
   return (
     <Fragment>
       <Seo customDescription="Page Not Found" customUrl="/404" />
-      <main>
+      <section>
         <h1>404</h1>
-      </main>
+      </section>
     </Fragment>
   )
 }
