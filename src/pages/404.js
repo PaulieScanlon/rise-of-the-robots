@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import Seo from '../components/seo';
+import React, { Fragment } from 'react'
+import Seo from '../components/seo'
 
 const Page = () => {
   return (
@@ -9,7 +9,7 @@ const Page = () => {
         <h1>404</h1>
       </main>
     </Fragment>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page
