@@ -23,7 +23,15 @@
   "homepage": "https://github.com/PaulieScanlon/rise-of-the-robots#readme",
   "dependencies": {
     "gatsby": "^4.12.1",
+    "gatsby-plugin-gatsby-cloud": "^4.12.1",
+    "gatsby-plugin-image": "^2.12.1",
+    "gatsby-plugin-react-helmet": "^5.12.1",
+    "gatsby-plugin-sharp": "^4.12.1",
+    "gatsby-source-contentful": "^7.10.1",
+    "gatsby-transformer-sharp": "^4.12.1",
+    "prop-types": "^15.8.1",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-helmet": "^6.1.0"
   }
 }
