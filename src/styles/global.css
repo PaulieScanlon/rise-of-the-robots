@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Inconsolata-Bold';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/Inconsolata-Bold.woff) format('woff'),
+    url(/fonts/Inconsolata-Bold.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Inconsolata-Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/Inconsolata-Regular.woff) format('woff'),
+    url(/fonts/Inconsolata-Regular.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Inconsolata-ExtraLight';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/Inconsolata-ExtraLight.woff) format('woff'),
+    url(/fonts/Inconsolata-ExtraLight.woff2) format('woff2');
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+}
