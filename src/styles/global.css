@@ -36,4 +36,13 @@
   h6 {
     @apply font-heading;
   }
+  html,
+  body {
+    @apply bg-brand-background text-white;
+  }
+  /* https://isotropic.co/tool/hex-color-to-css-filter/ */
+  /* .header-svg {
+    filter: invert(13%) sepia(86%) saturate(3513%) hue-rotate(266deg)
+      brightness(104%) contrast(93%);
+  } */
 }

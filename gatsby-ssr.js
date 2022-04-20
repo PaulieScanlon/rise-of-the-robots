@@ -5,7 +5,7 @@ export const wrapRootElement = ({ element }) => {
   return <RootElement>{element}</RootElement>
 }
 
-export const onRenderBody = ({ setHeadComponents }) => {
+export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
   setHeadComponents([
     <link
       key="Inconsolata-Bold-w"
