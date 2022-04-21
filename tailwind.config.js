@@ -17,6 +17,11 @@ module.exports = {
           gray: '#b7b5bc',
         },
       },
+      gridTemplateColumns: {
+        ['auto-auto']: 'auto auto',
+        ['auto-1fr']: 'auto 1fr',
+        ['1fr-auto']: '1fr auto',
+      },
     },
   },
   plugins: [],
