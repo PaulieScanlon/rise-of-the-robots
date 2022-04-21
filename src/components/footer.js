@@ -33,10 +33,13 @@ const Footer = () => {
 
   return (
     <footer>
-      <nav className="flex items-center justify-between max-w-screen-xl mx-auto p-4 text-brand-gray">
+      <nav className="flex flex-col gap-4 md:flex-row items-center justify-between max-w-screen-xl mx-auto p-4 text-brand-gray">
         {Object.values(groupReducer(links)).map((values, index) => {
           return (
-            <ul key={index} className="flex items-center gap-x-4">
+            <ul
+              key={index}
+              className="flex flex-col md:flex-row items-center gap-x-4"
+            >
               {values.map((link, index) => {
                 const { name, url, image } = link
                 return (
