@@ -2,6 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import { isHref } from '../utils/is-href'
+import { groupReducer } from '../utils/group-reducer'
 
 const Header = () => {
   const {
@@ -32,48 +33,32 @@ const Header = () => {
     }
   `)
 
-  const groups = links.reduce((items, item) => {
-    const { group } = item
-
-    items[group] = items[group] || []
-
-    items[group].push(item)
-
-    return items
-  }, {})
-
   return (
-    <header>
-      <nav className="flex items-center justify-between max-w-screen-xl mx-auto p-4 border-b border-brand-secondary border-solid">
-        {Object.values(groups).map((values, index) => {
+    <header className="border-b border-brand-secondary border-solid">
+      <nav className="flex items-center justify-between max-w-screen-xl mx-auto p-4">
+        {Object.values(groupReducer(links)).map((values, index) => {
           return (
             <ul key={index} className="flex items-center gap-x-4">
               {values.map((link, index) => {
-                const {
-                  name,
-                  url,
-                  image: {
-                    file: {
-                      details: {
-                        image: { width, height },
-                      },
-                    },
-                    svg: { dataURI },
-                  },
-                } = link
+                const { name, url, image } = link
 
-                const image = (
-                  <img src={dataURI} alt={name} width={width} height={height} />
+                const img = (
+                  <img
+                    src={image.svg.dataURI}
+                    alt={name}
+                    width={image.file.details.image.width}
+                    height={image.file.details.image.height}
+                  />
                 )
 
                 return (
                   <li key={index}>
                     {isHref(url) ? (
                       <a href={url} target="_blank" rel="noreferrer">
-                        {image}
+                        {img}
                       </a>
                     ) : (
-                      <Link to={url}>{image}</Link>
+                      <Link to={url}>{img}</Link>
                     )}
                   </li>
                 )
