@@ -1,5 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import { groupReducer } from '../utils/group-reducer'
 
 const BackgroundSvgs = () => {
   const {
@@ -9,6 +10,7 @@ const BackgroundSvgs = () => {
       contentfulBackground {
         name
         backgroundSvg {
+          group
           name
           image {
             file {
@@ -29,17 +31,28 @@ const BackgroundSvgs = () => {
   `)
 
   return (
-    <div className="absolute top-0 left-0 z-0 xl:flex hidden w-screen h-screen items-start justify-between p-4 ">
-      {backgroundSvg.map((svg, index) => {
-        const { name, image } = svg
+    <div className="absolute top-0 left-0 z-0 xl:grid hidden w-screen h-full p-4">
+      {Object.values(groupReducer(backgroundSvg)).map((images, index) => {
         return (
-          <img
-            key={index}
-            src={image.svg.dataURI}
-            alt={name}
-            width={image.file.details.image.width}
-            height={image.file.details.image.height}
-          />
+          <div key={index} className="flex justify-between">
+            {images.map((svg, index) => {
+              const { name, image, group } = svg
+              return (
+                <div
+                  key={index}
+                  className={`${group === 'top' ? 'self-top' : 'self-end'}`}
+                >
+                  <img
+                    key={index}
+                    src={image.svg.dataURI}
+                    alt={name}
+                    width={image.file.details.image.width}
+                    height={image.file.details.image.height}
+                  />
+                </div>
+              )
+            })}
+          </div>
         )
       })}
     </div>

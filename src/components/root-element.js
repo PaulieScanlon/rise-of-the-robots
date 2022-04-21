@@ -10,7 +10,7 @@ const RootElement = ({ children }) => {
       <Seo />
       <Header />
       <main className="relative">
-        <div className="relative max-w-screen-lg min-w-[320px] min-h-screen mx-auto p-4 z-10">
+        <div className="relative max-w-screen-lg min-w-[320px] min-h-[1800px] mx-auto p-4 z-10">
           {children}
         </div>
         <BackgroundSvgs />

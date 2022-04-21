@@ -7,7 +7,6 @@ const getSection = (name) => {
   switch (name) {
     case 'Hero':
       return <Hero />
-      break
 
     default:
       break

@@ -64,7 +64,7 @@ const Hero = () => {
           {links.map((link, index) => {
             const { name, url, image } = link
             return (
-              <a href={url} target="_blank" rel="noreferrer">
+              <a key={index} href={url} target="_blank" rel="noreferrer">
                 <img
                   src={image.svg.dataURI}
                   alt={name}
