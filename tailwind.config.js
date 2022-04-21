@@ -14,6 +14,7 @@ module.exports = {
           secondary: '#7026b9',
           gatsby: '#663399',
           rive: '#d041ab',
+          gray: '#b7b5bc',
         },
       },
     },
