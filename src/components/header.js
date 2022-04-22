@@ -51,14 +51,23 @@ const Header = () => {
                   />
                 )
 
+                const styles = 'icon-link hover:outline-brand-link'
+
                 return (
                   <li key={index}>
                     {isHref(url) ? (
-                      <a href={url} target="_blank" rel="noreferrer">
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={styles}
+                      >
                         {img}
                       </a>
                     ) : (
-                      <Link to={url}>{img}</Link>
+                      <Link className={styles} to={url}>
+                        {img}
+                      </Link>
                     )}
                   </li>
                 )

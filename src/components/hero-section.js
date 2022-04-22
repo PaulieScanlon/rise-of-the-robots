@@ -1,11 +1,10 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-const Hero = () => {
+const HeroSection = () => {
   const { contentfulHeroSection } = useStaticQuery(graphql`
     {
       contentfulHeroSection {
-        name
         logo {
           title
           file {
@@ -64,7 +63,13 @@ const Hero = () => {
           {links.map((link, index) => {
             const { name, url, image } = link
             return (
-              <a key={index} href={url} target="_blank" rel="noreferrer">
+              <a
+                key={index}
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+                className="icon-link flex items-center h-10 hover:outline-white"
+              >
                 <img
                   src={image.svg.dataURI}
                   alt={name}
@@ -80,4 +85,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default HeroSection
