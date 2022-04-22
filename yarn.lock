@@ -1178,6 +1178,11 @@
   resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-14.1.2.tgz#33162fdbf427891122a96030f806ca9a9cf0e844"
   integrity sha512-XbgZ7op5uyYYszipgQg/bYobF4b+llXyTwS8hISRniQY9xKESz544eP2OGmRc4J3MHx29M7Vmx7TVA/IK65giQ==
 
+"@contentful/rich-text-types@^15.12.1":
+  version "15.12.1"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-15.12.1.tgz#3b131f03fc55b6001f6eb5f5615aefb22678b3d3"
+  integrity sha512-WQJic0fnAbTa8xzO3Z+aVqDmA5+JMNQlATQMVJ40GoOrnM8YoJZsKGf6xX/O6Y6Eq10T1LrpxIOslODFI9qFgg==
+
 "@cspotcode/source-map-consumer@0.8.0":
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/@cspotcode/source-map-consumer/-/source-map-consumer-0.8.0.tgz#33bf4b7b39c178821606f669bbc447a6a629786b"

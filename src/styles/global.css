@@ -40,9 +40,16 @@
   body {
     @apply bg-brand-background text-white;
   }
-  /* https://isotropic.co/tool/hex-color-to-css-filter/ */
-  /* .header-svg {
-    filter: invert(13%) sepia(86%) saturate(3513%) hue-rotate(266deg)
-      brightness(104%) contrast(93%);
-  } */
+  .icon-link {
+    @apply block p-1 hover:outline;
+  }
+  .button {
+    @apply font-bold p-3;
+  }
+  .button-gatsby-primary {
+    @apply bg-brand-secondary hover:bg-brand-link;
+  }
+  .button-gatsby-secondary {
+    @apply underline text-brand-link hover:text-white;
+  }
 }
