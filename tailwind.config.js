@@ -1,6 +1,6 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
-  safelist: ['button-gatsby-primary', 'button-gatsby-secondary'],
+  safelist: ['button-primary', 'button-secondary', 'button-ghost'],
   theme: {
     fontFamily: {
       sans: ['Inconsolata-Regular', 'sans-serif'],
@@ -11,13 +11,10 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          background: '#11081f',
-          primary: '#2ca72c',
-          secondary: '#7026b9',
-          gatsby: '#663399',
-          rive: '#d041ab',
-          gray: '#b7b5bc',
-          link: '#a456f0',
+          background: '#1B0C24',
+          primary: '#00FF00',
+          secondary: '#FB74D6',
+          tertiary: '#342f70',
         },
       },
       gridTemplateColumns: {

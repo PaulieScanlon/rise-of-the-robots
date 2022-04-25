@@ -40,16 +40,22 @@
   body {
     @apply bg-brand-background text-white;
   }
-  .icon-link {
+  #gatsby-focus-wrapper {
+    @apply grid gap-y-8 lg:gap-y-24;
+  }
+  .svg-link {
     @apply block p-1 hover:outline;
   }
   .button {
-    @apply font-bold p-3;
+    @apply flex justify-self-start items-center px-3 py-2;
   }
-  .button-gatsby-primary {
-    @apply bg-brand-secondary hover:bg-brand-link;
+  .button-primary {
+    @apply bg-brand-primary text-brand-background hover:bg-white;
   }
-  .button-gatsby-secondary {
-    @apply underline text-brand-link hover:text-white;
+  .button-secondary {
+    @apply bg-brand-secondary text-brand-background hover:bg-white;
+  }
+  .button-ghost {
+    @apply underline text-brand-secondary hover:text-white;
   }
 }

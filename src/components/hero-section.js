@@ -21,6 +21,12 @@ const HeroSection = () => {
         }
         eventName
         eventTagline
+        eventDetails
+        button {
+          text
+          type
+          url
+        }
         links {
           url
           name
@@ -42,10 +48,17 @@ const HeroSection = () => {
     }
   `)
 
-  const { logo, eventName, eventTagline, links } = contentfulHeroSection
+  const {
+    logo,
+    eventName,
+    eventTagline,
+    eventDetails,
+    button: { text, type, url },
+    links,
+  } = contentfulHeroSection
   return (
-    <div className="grid lg:grid-cols-2 gap-4 self-center">
-      <div />
+    <div className="grid lg:grid-cols-2 gap-12 self-center">
+      <div class="hero-robot-temp" />
       <div className="grid gap-8">
         <div className="grid gap-4">
           <img
@@ -56,7 +69,18 @@ const HeroSection = () => {
           />
           <div>
             <h1 className="text-4xl">{eventName}</h1>
-            <h2 className="text-md font-light">{eventTagline}</h2>
+            <h2 className="text-sm font-light">{eventTagline}</h2>
+          </div>
+          <div className="grid gap-4">
+            <h3 className="text-md font-bold">{eventDetails}</h3>
+            <a
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              className={`button button-${type}`}
+            >
+              {text}
+            </a>
           </div>
         </div>
         <div className="flex gap-4 items-center">
@@ -68,7 +92,7 @@ const HeroSection = () => {
                 href={url}
                 target="_blank"
                 rel="noreferrer"
-                className="icon-link flex items-center h-10 hover:outline-white"
+                className="svg-link flex items-center h-10 hover:outline-white"
               >
                 <img
                   src={image.svg.dataURI}

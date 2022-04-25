@@ -34,7 +34,7 @@ const Header = () => {
   `)
 
   return (
-    <header className="border-b border-brand-secondary border-solid">
+    <header className="border-b border-brand-tertiary border-solid">
       <nav className="flex items-center justify-between max-w-screen-xl mx-auto p-4">
         {Object.values(groupReducer(links)).map((values, index) => {
           return (
@@ -51,7 +51,7 @@ const Header = () => {
                   />
                 )
 
-                const styles = 'icon-link hover:outline-brand-link'
+                const styles = 'svg-link hover:outline-brand-primary'
 
                 return (
                   <li key={index}>
