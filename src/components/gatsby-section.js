@@ -22,7 +22,7 @@ const GatsbySection = () => {
   const { title, description, buttons } = contentfulGatsbySection
 
   return (
-    <div className="grid lg:grid-cols-2 gap-4 self-center">
+    <div className="grid lg:grid-cols-2 gap-12 self-center">
       <div className="grid gap-8">
         <div className="grid gap-2">
           <h2 className="text-2xl">{title}</h2>
@@ -37,7 +37,7 @@ const GatsbySection = () => {
                 href={url}
                 target="_blank"
                 rel="noreferrer"
-                className={`button button-gatsby-${type}`}
+                className={`button button-${type}`}
               >
                 {text}
               </a>

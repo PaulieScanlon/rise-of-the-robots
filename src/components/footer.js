@@ -33,7 +33,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <nav className="flex flex-col gap-4 md:flex-row items-center justify-between max-w-screen-xl mx-auto p-4 text-brand-gray">
+      <nav className="flex flex-col gap-4 md:flex-row items-center justify-between max-w-screen-xl mx-auto p-4 text-brand-primary">
         {Object.values(groupReducer(links)).map((values, index) => {
           return (
             <ul
@@ -56,6 +56,7 @@ const Footer = () => {
                           alt={name}
                           width={image.file.details.image.width}
                           height={image.file.details.image.height}
+                          className="svg-link hover:outline-brand-primary"
                         />
                       ) : (
                         <Fragment>{name}</Fragment>
