@@ -10,44 +10,44 @@ const FormSection = () => {
   // Aron to confirm // Possibly add this to Contentful
   const formId = 1139
 
-  //   useEffect(() => {
-  //     validateEmail()
-  //   }, [email])
+  useEffect(() => {
+    validateEmail()
+  }, [email])
 
-  //   const validateEmail = () => {
-  //     const isValid = emailInput.current.checkValidity()
-  //     if (email && !isValid) {
-  //       setErrorMsg('Please provide a valid email address.')
-  //       setSuccessMsg(null)
-  //     } else {
-  //       setErrorMsg(null)
-  //     }
-  //     return isValid
-  //   }
+  const validateEmail = () => {
+    const isValid = emailInput.current.checkValidity()
+    if (email && !isValid) {
+      setErrorMsg('Please provide a valid email address.')
+      setSuccessMsg(null)
+    } else {
+      setErrorMsg(null)
+    }
+    return isValid
+  }
 
-  //   const handleSubmit = async (evt) => {
-  //     console.log('handleSubmit')
-  //     evt.preventDefault()
-  //     if (validateEmail()) {
-  //     if (typeof window !== 'undefined') {
-  //       window.MktoForms2.getForm(formId)
-  //         .vals({ Email: email })
-  //         .onSuccess(() => {
-  //           console.log('onSuccess')
-  //           setSuccessMsg(
-  //             'Success! You have been subscribed to the Gatsby newsletter.'
-  //           )
-  //           setEmail('')
-  //           return false
-  //         })
-  //         .submit()
-  //     }
-  //     }
-  //   }
+  const handleSubmit = async (evt) => {
+    console.log('handleSubmit')
+    evt.preventDefault()
+    if (validateEmail()) {
+      if (typeof window !== 'undefined') {
+        window.MktoForms2.getForm(formId)
+          .vals({ Email: email })
+          .onSuccess(() => {
+            console.log('onSuccess')
+            setSuccessMsg(
+              'Success! You have been subscribed to the Gatsby newsletter.'
+            )
+            setEmail('')
+            return false
+          })
+          .submit()
+      }
+    }
+  }
 
   return (
     <div>
-      {/* <form onSubmit={handleSubmit} noValidate className="grid">
+      <form onSubmit={handleSubmit} noValidate className="grid">
         <label htmlFor="email" className="grid-area-1">
           Subscribe to our newsletter
         </label>
@@ -67,7 +67,7 @@ const FormSection = () => {
           Subscribe
         </button>
       </form>
-      {errorMsg || successMsg ? <p>{errorMsg || successMsg}</p> : null} */}
+      {errorMsg || successMsg ? <p>{errorMsg || successMsg}</p> : null}
       <MarketoForm formId={formId} />
     </div>
   )
