@@ -58,4 +58,10 @@
   .button-ghost {
     @apply underline text-brand-secondary hover:text-white;
   }
+  .grid-area-1 {
+    grid-area: 1;
+  }
+  .grid-area-2 {
+    grid-area: 2;
+  }
 }
