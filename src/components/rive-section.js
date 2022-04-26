@@ -2,10 +2,10 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import ContentfulRichTech from './contentful-rich-text'
 
-const GatsbySection = () => {
-  const { contentfulGatsbySection } = useStaticQuery(graphql`
+const RiveSection = () => {
+  const { contentfulRiveSection } = useStaticQuery(graphql`
     {
-      contentfulGatsbySection {
+      contentfulRiveSection {
         title
         description {
           raw
@@ -19,12 +19,13 @@ const GatsbySection = () => {
     }
   `)
 
-  const { title, description, buttons } = contentfulGatsbySection
+  const { title, description, buttons } = contentfulRiveSection
 
   return (
     <div className="grid lg:grid-cols-2 gap-12 self-center">
-      <div className="grid gap-8 justify-items-end">
-        <div className="grid gap-2 text-right">
+      <div />
+      <div className="grid gap-8">
+        <div className="grid gap-2">
           <h2 className="text-2xl">{title}</h2>
           <ContentfulRichTech richText={description} />
         </div>
@@ -45,9 +46,8 @@ const GatsbySection = () => {
           })}
         </div>
       </div>
-      <div />
     </div>
   )
 }
 
-export default GatsbySection
+export default RiveSection
