@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 
 import HeroSection from '../components/hero-section'
 import GatsbySection from '../components/gatsby-section'
+import FormSection from '../components/form-section'
 
 const getSection = (__typename) => {
   switch (__typename) {
@@ -11,6 +12,9 @@ const getSection = (__typename) => {
 
     case 'ContentfulGatsbySection':
       return <GatsbySection />
+
+    case 'ContentfulFormSection':
+      return <FormSection />
 
     default:
       break

@@ -15,7 +15,11 @@ module.exports = {
           primary: '#00FF00',
           secondary: '#FB74D6',
           tertiary: '#342f70',
+          gray: '#eee2e3',
         },
+      },
+      maxWidth: {
+        section: '768px',
       },
       gridTemplateColumns: {
         ['auto-auto']: 'auto auto',
