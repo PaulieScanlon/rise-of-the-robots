@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <header className="border-b border-brand-tertiary border-solid">
-      <nav className="flex items-center justify-between max-w-screen-xl mx-auto px-4 py-2 md:py-4">
+      <nav className="flex items-center justify-between max-w-screen-lg mx-auto px-4 py-2 md:py-4">
         {Object.values(groupReducer(links)).map((values, index) => {
           return (
             <ul key={index} className="flex items-center gap-x-4">

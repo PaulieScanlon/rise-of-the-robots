@@ -64,7 +64,7 @@ const HeroSection = () => {
           <img
             src={logo.svg.dataURI}
             alt={logo.title}
-            className="w-3/6 lg:w-full md:h-auto"
+            className="w-3/6 lg:w-11/12 md:h-auto"
             width={logo.file.details.image.width}
             height={logo.file.details.image.height}
           />
