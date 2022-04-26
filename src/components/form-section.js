@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import MarketoForm from './marketo-form'
+import ContentfulRichTech from './contentful-rich-text'
 
 const FormSection = () => {
   const [email, setEmail] = useState('')
@@ -7,8 +9,18 @@ const FormSection = () => {
   const [errorMsg, setErrorMsg] = useState(null)
   const emailInput = useRef(null)
 
-  // Aron to confirm // Possibly add this to Contentful
-  const formId = 1139
+  const { contentfulFormSection } = useStaticQuery(graphql`
+    {
+      contentfulFormSection {
+        title
+        description {
+          raw
+        }
+      }
+    }
+  `)
+
+  const { title, description } = contentfulFormSection
 
   useEffect(() => {
     validateEmail()
@@ -26,14 +38,12 @@ const FormSection = () => {
   }
 
   const handleSubmit = async (evt) => {
-    console.log('handleSubmit')
     evt.preventDefault()
     if (validateEmail()) {
       if (typeof window !== 'undefined') {
-        window.MktoForms2.getForm(formId)
+        window.MktoForms2.getForm(process.env.GATSBY_MKTO_FORM_ID)
           .vals({ Email: email })
           .onSuccess(() => {
-            console.log('onSuccess')
             setSuccessMsg(
               'Success! You have been subscribed to the Gatsby newsletter.'
             )
@@ -46,29 +56,40 @@ const FormSection = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} noValidate className="grid">
-        <label htmlFor="email" className="grid-area-1">
-          Subscribe to our newsletter
-        </label>
-        <input
-          name="email"
-          type="email"
-          required
-          placeholder="you@example.xyz"
-          value={email}
-          ref={emailInput}
-          onChange={(e) => {
-            setEmail(e.target.value)
-          }}
-          className="text-brand-background grid-area-2"
-        />
-        <button type="submit" className="button button-secondary grid-area-2">
-          Subscribe
-        </button>
-      </form>
-      {errorMsg || successMsg ? <p>{errorMsg || successMsg}</p> : null}
-      <MarketoForm formId={formId} />
+    <div className="grid gap-12 justify-items-center self-center">
+      <div className="grid gap-2 text-center max-w-section">
+        <h2 className="text-2xl">{title}</h2>
+        <ContentfulRichTech richText={description} />
+      </div>
+      <div>
+        <form onSubmit={handleSubmit} noValidate className="grid">
+          <label
+            htmlFor="email"
+            className="text-sm text-brand-gray grid-area-1"
+          >
+            Subscribe to the Gatsby newsletter
+          </label>
+          <input
+            name="email"
+            type="email"
+            required
+            placeholder="you@example.xyz"
+            value={email}
+            ref={emailInput}
+            onChange={(e) => {
+              setEmail(e.target.value)
+            }}
+            className="text-brand-background px-2 py-1 grid-area-2 border-2 border-brand-secondary"
+          />
+          <button type="submit" className="button button-secondary grid-area-2">
+            Subscribe
+          </button>
+        </form>
+        {errorMsg || successMsg ? (
+          <p className="text-sm">{errorMsg || successMsg}</p>
+        ) : null}
+        <MarketoForm formId={process.env.GATSBY_MKTO_FORM_ID} />
+      </div>
     </div>
   )
 }

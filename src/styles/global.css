@@ -50,10 +50,10 @@
     @apply flex justify-self-start items-center px-3 py-2;
   }
   .button-primary {
-    @apply bg-brand-primary text-brand-background hover:bg-white;
+    @apply bg-brand-primary text-brand-background hover:bg-brand-gray;
   }
   .button-secondary {
-    @apply bg-brand-secondary text-brand-background hover:bg-white;
+    @apply bg-brand-secondary text-brand-background hover:bg-brand-gray;
   }
   .button-ghost {
     @apply underline text-brand-secondary hover:text-white;
