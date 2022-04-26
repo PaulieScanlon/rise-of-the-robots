@@ -68,8 +68,8 @@ const HeroSection = () => {
             height={logo.file.details.image.height}
           />
           <div>
-            <h1 className="text-4xl">{eventName}</h1>
-            <h2 className="text-sm font-light">{eventTagline}</h2>
+            <h1 className="text-3xl md:text-4xl">{eventName}</h1>
+            <h2 className="text-md font-light">{eventTagline}</h2>
           </div>
           <div className="grid gap-4">
             <h3 className="text-md font-bold">{eventDetails}</h3>

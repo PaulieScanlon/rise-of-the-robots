@@ -5,6 +5,7 @@ import HeroSection from '../components/hero-section'
 import GatsbySection from '../components/gatsby-section'
 import RiveSection from '../components/rive-section'
 import FormSection from '../components/form-section'
+import BlogSection from '../components/blog-section'
 
 const getSection = (__typename) => {
   switch (__typename) {
@@ -19,6 +20,9 @@ const getSection = (__typename) => {
 
     case 'ContentfulFormSection':
       return <FormSection />
+
+    case 'ContentfulBlogSection':
+      return <BlogSection />
 
     default:
       break

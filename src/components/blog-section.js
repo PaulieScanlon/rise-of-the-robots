@@ -2,10 +2,10 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import ContentfulRichTech from './contentful-rich-text'
 
-const GatsbySection = () => {
-  const { contentfulGatsbySection } = useStaticQuery(graphql`
+const BlogSection = () => {
+  const { contentfulBlogSection } = useStaticQuery(graphql`
     {
-      contentfulGatsbySection {
+      contentfulBlogSection {
         title
         description {
           raw
@@ -19,7 +19,7 @@ const GatsbySection = () => {
     }
   `)
 
-  const { title, description, buttons } = contentfulGatsbySection
+  const { title, description, buttons } = contentfulBlogSection
 
   return (
     <div className="grid lg:grid-cols-2 gap-12 self-center">
@@ -50,4 +50,4 @@ const GatsbySection = () => {
   )
 }
 
-export default GatsbySection
+export default BlogSection
