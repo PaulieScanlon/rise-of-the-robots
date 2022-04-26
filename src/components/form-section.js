@@ -61,7 +61,7 @@ const FormSection = () => {
         <h2 className="text-2xl">{title}</h2>
         <ContentfulRichTech richText={description} />
       </div>
-      <div>
+      <div className="min-h-[90px]">
         <form onSubmit={handleSubmit} noValidate className="grid">
           <label
             htmlFor="email"
