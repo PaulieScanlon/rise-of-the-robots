@@ -5,17 +5,12 @@ export const wrapRootElement = ({ element }) => {
   return <RootElement>{element}</RootElement>
 }
 
-const pathToFonts =
-  process.env.NODE_ENV === 'production'
-    ? 'https://riseoftherobots.gatsbyjs.io'
-    : ''
-
 export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
   setHeadComponents([
     <link
       key="Inconsolata-Bold-w"
       rel="preload"
-      href={`${pathToFonts}/fonts/Inconsolata-Bold.woff`}
+      href="/fonts/Inconsolata-Bold.woff"
       as="font"
       type="font/woff"
       crossOrigin="anonymous"
@@ -23,7 +18,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     <link
       key="Inconsolata-Bold-w2"
       rel="preload"
-      href={`${pathToFonts}/fonts/Inconsolata-Bold.woff2`}
+      href="/fonts/Inconsolata-Bold.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -31,7 +26,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     <link
       key="Inconsolata-Regular-w"
       rel="preload"
-      href={`${pathToFonts}/fonts/Inconsolata-Regular.woff`}
+      href="/fonts/Inconsolata-Regular.woff"
       as="font"
       type="font/woff"
       crossOrigin="anonymous"
@@ -39,7 +34,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     <link
       key="Inconsolata-Regular-w2"
       rel="preload"
-      href={`${pathToFonts}/fonts/Inconsolata-Regular.woff2`}
+      href="/fonts/Inconsolata-Regular.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -47,7 +42,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     <link
       key="Inconsolata-ExtraLight-w"
       rel="preload"
-      href={`${pathToFonts}/fonts/Inconsolata-ExtraLight.woff`}
+      href="/fonts/Inconsolata-ExtraLight.woff"
       as="font"
       type="font/woff"
       crossOrigin="anonymous"
@@ -55,7 +50,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     <link
       key="Inconsolata-ExtraLight-w2"
       rel="preload"
-      href={`${pathToFonts}/fonts/Inconsolata-ExtraLight.woff2`}
+      href="/fonts/Inconsolata-ExtraLight.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
