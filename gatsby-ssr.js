@@ -1,4 +1,6 @@
 import React from 'react'
+import { withPrefix } from 'gatsby'
+
 import RootElement from './src/components/root-element'
 
 export const wrapRootElement = ({ element }) => {
@@ -10,7 +12,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     <link
       key="Inconsolata-Bold-w"
       rel="preload"
-      href="/fonts/Inconsolata-Bold.woff"
+      href={`${withPrefix('/')}fonts/Inconsolata-Bold.woff`}
       as="font"
       type="font/woff"
       crossOrigin="anonymous"
@@ -18,7 +20,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     <link
       key="Inconsolata-Bold-w2"
       rel="preload"
-      href="/fonts/Inconsolata-Bold.woff2"
+      href={`${withPrefix('/')}fonts/Inconsolata-Bold.woff2`}
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -26,7 +28,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     <link
       key="Inconsolata-Regular-w"
       rel="preload"
-      href="/fonts/Inconsolata-Regular.woff"
+      href={`${withPrefix('/')}fonts/Inconsolata-Regular.woff`}
       as="font"
       type="font/woff"
       crossOrigin="anonymous"
@@ -34,7 +36,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     <link
       key="Inconsolata-Regular-w2"
       rel="preload"
-      href="/fonts/Inconsolata-Regular.woff2"
+      href={`${withPrefix('/')}fonts/Inconsolata-Regular.woff2`}
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -42,7 +44,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     <link
       key="Inconsolata-ExtraLight-w"
       rel="preload"
-      href="/fonts/Inconsolata-ExtraLight.woff"
+      href={`${withPrefix('/')}fonts/Inconsolata-ExtraLight.woff`}
       as="font"
       type="font/woff"
       crossOrigin="anonymous"
@@ -50,7 +52,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     <link
       key="Inconsolata-ExtraLight-w2"
       rel="preload"
-      href="/fonts/Inconsolata-ExtraLight.woff2"
+      href={`${withPrefix('/')}fonts/Inconsolata-ExtraLight.woff2`}
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
