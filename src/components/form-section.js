@@ -57,11 +57,11 @@ const FormSection = () => {
 
   return (
     <div className="grid gap-12 lg:justify-items-center self-center">
-      <div className="grid gap-2 lg:text-center max-w-section">
+      <div className="grid gap-2 text-center mx-auto max-w-section">
         <h2 className="text-2xl">{title}</h2>
         <ContentfulRichTech richText={description} />
       </div>
-      <div className="min-h-[90px]">
+      <div className="mx-auto min-h-[90px]">
         <form onSubmit={handleSubmit} noValidate className="grid">
           <label
             htmlFor="email"
