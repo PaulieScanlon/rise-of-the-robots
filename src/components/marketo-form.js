@@ -13,7 +13,7 @@ const MarketoForm = ({ formId }) => {
 
 MarketoForm.propTypes = {
   /** The Marketo Form Id */
-  formId: PropTypes.number,
+  formId: PropTypes.string,
 }
 
 export default MarketoForm
