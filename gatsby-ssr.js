@@ -28,7 +28,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     />,
     <link
       key="Inconsolata-Bold-w"
-      rel="preload"
+      // rel="preload"
       href={`${withPrefix('/')}fonts/Inconsolata-Bold.woff`}
       as="font"
       type="font/woff"
@@ -36,7 +36,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     />,
     <link
       key="Inconsolata-Bold-w2"
-      rel="preload"
+      // rel="preload"
       href={`${withPrefix('/')}fonts/Inconsolata-Bold.woff2`}
       as="font"
       type="font/woff2"
@@ -44,7 +44,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     />,
     <link
       key="Inconsolata-Regular-w"
-      rel="preload"
+      // rel="preload"
       href={`${withPrefix('/')}fonts/Inconsolata-Regular.woff`}
       as="font"
       type="font/woff"
@@ -52,7 +52,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     />,
     <link
       key="Inconsolata-Regular-w2"
-      rel="preload"
+      // rel="preload"
       href={`${withPrefix('/')}fonts/Inconsolata-Regular.woff2`}
       as="font"
       type="font/woff2"
@@ -60,7 +60,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     />,
     <link
       key="Inconsolata-ExtraLight-w"
-      rel="preload"
+      // rel="preload"
       href={`${withPrefix('/')}fonts/Inconsolata-ExtraLight.woff`}
       as="font"
       type="font/woff"
@@ -68,7 +68,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     />,
     <link
       key="Inconsolata-ExtraLight-w2"
-      rel="preload"
+      // rel="preload"
       href={`${withPrefix('/')}fonts/Inconsolata-ExtraLight.woff2`}
       as="font"
       type="font/woff2"
