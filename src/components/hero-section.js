@@ -1,5 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import HeroBot from '../rive/hero-bot'
 
 const HeroSection = () => {
   const { contentfulHeroSection } = useStaticQuery(graphql`
@@ -57,8 +58,7 @@ const HeroSection = () => {
     links,
   } = contentfulHeroSection
   return (
-    <div className="grid lg:grid-cols-2 gap-12 self-center">
-      <div className="hero-robot-temp" />
+    <div className="grid lg:grid-cols-2 gap-12">
       <div className="grid gap-8">
         <div className="grid gap-4 justify-items-center lg:justify-items-start">
           <img
@@ -105,6 +105,9 @@ const HeroSection = () => {
             )
           })}
         </div>
+      </div>
+      <div className="hero-robot-temp lg:row-start-1 flex items-center justify-center">
+        <HeroBot />
       </div>
     </div>
   )

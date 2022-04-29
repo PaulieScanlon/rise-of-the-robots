@@ -4,3 +4,11 @@ const { copyLibFiles } = require('@builder.io/partytown/utils')
 exports.onPreBuild = async () => {
   await copyLibFiles(path.join(__dirname, 'static', '~partytown'))
 }
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [{ test: /\.(riv)$/i, type: 'asset/resource' }],
+    },
+  })
+}
