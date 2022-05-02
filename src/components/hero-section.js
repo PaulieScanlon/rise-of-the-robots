@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import HeroBot from '../rive/hero-bot'
+import { StaticImage } from 'gatsby-plugin-image'
+
+import RiveLazy from './rive-lazy'
+
+import HeroBot from '../../static/images/hero-bot.riv'
+const RiveAnimation = lazy(() => import('../components/rive-animation'))
 
 const HeroSection = () => {
   const { contentfulHeroSection } = useStaticQuery(graphql`
@@ -106,8 +111,23 @@ const HeroSection = () => {
           })}
         </div>
       </div>
-      <div className="hero-robot-temp lg:row-start-1 flex items-center justify-center">
-        <HeroBot />
+      <div className="lg:row-start-1 flex items-center justify-center">
+        <RiveLazy
+          animation={
+            <RiveAnimation
+              ariaLabel="Hero Bot Animation"
+              riveFile={HeroBot}
+              className="hero-bot"
+            />
+          }
+          fallback={
+            <StaticImage
+              className="hero-bot"
+              src="../../static/images/hero-bot.png"
+              alt="Hero Bot Image"
+            />
+          }
+        />
       </div>
     </div>
   )
