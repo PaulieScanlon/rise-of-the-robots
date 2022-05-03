@@ -1,10 +1,7 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-import {
-  useRive,
-  //  useStateMachineInput
-} from 'rive-react'
+import { useRive } from '@rive-app/react-canvas'
 import usePrefersReducedMotion from '../hooks/use-prefers-reduced-motion'
 
 const RiveAnimation = ({ className, ariaLabel, riveFile }) => {
@@ -14,9 +11,6 @@ const RiveAnimation = ({ className, ariaLabel, riveFile }) => {
     src: riveFile,
     stateMachines: 'Idle',
   })
-
-  // const accessible = useStateMachineInput(rive, 'Idle', 'isLimited')
-  // console.log(accessible)
 
   useEffect(() => {
     if (rive) {
