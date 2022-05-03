@@ -7,24 +7,24 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(/fonts/Inconsolata-Bold.woff2) format('woff2'),
-    url(/fonts/Inconsolata-Bold.woff) format('woff');
+  src: url(/demos/rise-of-the-robots/fonts/Inconsolata-Bold.woff2) format('woff2'),
+    url(/demos/rise-of-the-robots/fonts/Inconsolata-Bold.woff) format('woff');
 }
 @font-face {
   font-family: 'Inconsolata-Regular';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(/fonts/Inconsolata-Regular.woff2) format('woff2'),
-    url(/fonts/Inconsolata-Regular.woff) format('woff');
+  src: url(/demos/rise-of-the-robots/fonts/Inconsolata-Regular.woff2) format('woff2'),
+    url(/demos/rise-of-the-robots/fonts/Inconsolata-Regular.woff) format('woff');
 }
 @font-face {
   font-family: 'Inconsolata-ExtraLight';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(/fonts/Inconsolata-ExtraLight.woff2) format('woff2'),
-    url(/fonts/Inconsolata-ExtraLight.woff) format('woff');
+  src: url(/demos/rise-of-the-robots/fonts/Inconsolata-ExtraLight.woff2) format('woff2'),
+    url(/demos/rise-of-the-robots/fonts/Inconsolata-ExtraLight.woff) format('woff');
 }
 
 @layer base {

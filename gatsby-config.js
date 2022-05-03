@@ -8,7 +8,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-gatsby-cloud',
     'gatsby-plugin-postcss',
     'gatsby-transformer-inline-svg',
     {
