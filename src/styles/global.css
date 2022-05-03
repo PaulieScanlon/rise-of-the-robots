@@ -46,6 +46,9 @@
   .hero-bot {
     @apply w-[300px] h-[300px] lg:w-[400px] lg:h-[400px];
   }
+  .rive-bot {
+    @apply w-[300px] h-[300px] lg:w-[500px] lg:h-[500px];
+  }
   .svg-link {
     @apply block p-1 hover:outline;
   }
