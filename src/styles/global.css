@@ -41,16 +41,19 @@
     @apply bg-brand-background text-white;
   }
   #gatsby-focus-wrapper {
-    @apply grid gap-y-8 lg:gap-y-24;
+    @apply grid gap-y-8 lg:gap-y-12;
   }
   .hero-bot {
-    @apply w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] pt-4;
+    @apply w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] pt-2 pl-2;
   }
   .hero-border {
     @apply absolute top-0 w-[300px] lg:w-[400px];
   }
   .rive-bot {
     @apply w-[300px] h-[300px] lg:w-[500px] lg:h-[500px];
+  }
+  .rive-border {
+    @apply absolute lg:left-8 bottom-4 lg:bottom-12 w-[260px] lg:w-[360px];
   }
   .svg-link {
     @apply block p-1 hover:outline;
