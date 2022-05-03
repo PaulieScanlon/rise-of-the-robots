@@ -69,12 +69,11 @@ const HeroSection = () => {
           <img
             src={logo.svg.dataURI}
             alt={logo.title}
-            className="w-3/6 lg:w-11/12 md:h-auto"
             width={logo.file.details.image.width}
             height={logo.file.details.image.height}
           />
           <div className="text-center lg:text-left">
-            <h1 className="text-3xl md:text-4xl">{eventName}</h1>
+            <h1 className="text-2xl md:text-3xl">{eventName}</h1>
             <h2 className="text-md font-light">{eventTagline}</h2>
           </div>
           <div className="grid gap-4 text-center lg:text-left justify-items-center lg:justify-items-start">
