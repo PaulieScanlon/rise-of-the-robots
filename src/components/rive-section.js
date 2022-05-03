@@ -22,11 +22,24 @@ const RiveSection = () => {
           text
           url
         }
+        border {
+          file {
+            details {
+              image {
+                width
+                height
+              }
+            }
+          }
+          svg {
+            dataURI
+          }
+        }
       }
     }
   `)
 
-  const { title, description, buttons } = contentfulRiveSection
+  const { title, description, buttons, border } = contentfulRiveSection
 
   return (
     <div className="grid lg:grid-cols-2 gap-12">
@@ -52,7 +65,12 @@ const RiveSection = () => {
           })}
         </div>
       </div>
-      <div className="lg:row-start-1  flex items-center justify-center">
+      <div className="relative lg:row-start-1 flex items-center justify-center">
+        <img
+          src={border.svg.dataURI}
+          alt={border.title}
+          className="rive-border"
+        />
         <RiveLazy
           animation={
             <RiveAnimation
