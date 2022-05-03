@@ -50,6 +50,19 @@ const HeroSection = () => {
             }
           }
         }
+        border {
+          file {
+            details {
+              image {
+                width
+                height
+              }
+            }
+          }
+          svg {
+            dataURI
+          }
+        }
       }
     }
   `)
@@ -61,7 +74,11 @@ const HeroSection = () => {
     eventDetails,
     button: { text, type, url },
     links,
+    border,
   } = contentfulHeroSection
+
+  console.log(border)
+
   return (
     <div className="grid lg:grid-cols-2 gap-12">
       <div className="grid gap-8">
@@ -110,7 +127,12 @@ const HeroSection = () => {
           })}
         </div>
       </div>
-      <div className="lg:row-start-1 flex items-center justify-center">
+      <div className="relative lg:row-start-1 flex items-center justify-center">
+        <img
+          src={border.svg.dataURI}
+          alt={border.title}
+          className="hero-border"
+        />
         <RiveLazy
           animation={
             <RiveAnimation

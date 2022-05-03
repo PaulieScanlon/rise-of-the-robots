@@ -44,7 +44,10 @@
     @apply grid gap-y-8 lg:gap-y-24;
   }
   .hero-bot {
-    @apply w-[300px] h-[300px] lg:w-[400px] lg:h-[400px];
+    @apply w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] pt-4;
+  }
+  .hero-border {
+    @apply absolute top-0 w-[300px] lg:w-[400px];
   }
   .rive-bot {
     @apply w-[300px] h-[300px] lg:w-[500px] lg:h-[500px];
