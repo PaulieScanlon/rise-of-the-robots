@@ -13,7 +13,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     <Partytown
       key="partytown"
       forward={['gtag']}
-      lib={withPathPrefix('~partytown')}
+      lib={withPrefix('~partytown')}
     />,
     <script
       key="google-analytics"
