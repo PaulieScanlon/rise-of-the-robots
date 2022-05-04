@@ -30,14 +30,14 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
         gtag('config', '${process.env.GATSBY_GOOGLE_TAG_MANAGER_ID}', { send_page_view: false })`,
       }}
     />,
-    // <link
-    //   key="Inconsolata-Bold-w2"
-    //   rel="preload"
-    //   href={`${withPrefix('/')}fonts/Inconsolata-Bold.woff2`}
-    //   as="font"
-    //   type="font/woff2"
-    //   crossOrigin="anonymous"
-    // />,
+    <link
+      key="Inconsolata-Bold-w2"
+      rel="preload"
+      href={`${withPrefix('/')}fonts/Inconsolata-Bold.woff2`}
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+    />,
     <link
       key="Inconsolata-Regular-w2"
       rel="preload"

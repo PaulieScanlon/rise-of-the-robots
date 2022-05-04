@@ -31,6 +31,7 @@
     "gatsby-plugin-react-helmet": "^5.12.1",
     "gatsby-plugin-sharp": "^4.12.1",
     "gatsby-source-contentful": "^7.10.1",
+    "gatsby-source-filesystem": "^4.13.0",
     "gatsby-transformer-inline-svg": "^1.2.0",
     "gatsby-transformer-sharp": "^4.12.1",
     "react": "^17.0.2",

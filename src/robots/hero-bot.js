@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react'
-import PropTypes from 'prop-types'
-
 import { useRive } from '@rive-app/react-canvas'
 import usePrefersReducedMotion from '../hooks/use-prefers-reduced-motion'
 
-const RiveAnimation = ({ className, ariaLabel, riveFile }) => {
+import Bot from './hero-bot.riv'
+
+const HeroBot = () => {
   const prefersReducedMotion = usePrefersReducedMotion()
 
   const { RiveComponent, rive } = useRive({
-    src: riveFile,
+    src: Bot,
     stateMachines: 'Idle',
+    autoplay: true,
   })
 
   useEffect(() => {
@@ -23,17 +24,12 @@ const RiveAnimation = ({ className, ariaLabel, riveFile }) => {
   }, [rive, prefersReducedMotion])
 
   return (
-    <RiveComponent role="img" aria-label={ariaLabel} className={className} />
+    <RiveComponent
+      role="img"
+      aria-label="Hero Bot Animation"
+      className="hero-bot"
+    />
   )
 }
 
-RiveAnimation.propTypes = {
-  /** CSS class name */
-  className: PropTypes.string,
-  /** HTML aria-label */
-  ariaLabel: PropTypes.string.isRequired,
-  /** .riv file */
-  riveFile: PropTypes.string.isRequired,
-}
-
-export default RiveAnimation
+export default HeroBot
