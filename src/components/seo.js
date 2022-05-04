@@ -7,6 +7,7 @@ const Seo = ({ customTitle, customDescription, customUrl, customImage }) => {
   const {
     contentfulSiteMetadata: {
       url,
+      cloudUrl,
       title,
       description,
       image,
@@ -17,6 +18,7 @@ const Seo = ({ customTitle, customDescription, customUrl, customImage }) => {
     {
       contentfulSiteMetadata {
         url
+        cloudUrl
         title
         description
         image {
@@ -34,8 +36,8 @@ const Seo = ({ customTitle, customDescription, customUrl, customImage }) => {
   const seoDescription = customDescription ? customDescription : description
   const seoUrl = customUrl ? `${url}${customUrl}` : url
   const seoImage = customImage
-    ? `${url}${customImage}`
-    : `${url}${image.gatsbyImage.images.fallback.src}`
+    ? `${cloudUrl}${customImage}`
+    : `${cloudUrl}${image.gatsbyImage.images.fallback.src}`
 
   return (
     <Helmet>
