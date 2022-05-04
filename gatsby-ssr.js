@@ -10,7 +10,11 @@ export const wrapRootElement = ({ element }) => {
 
 export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
   setHeadComponents([
-    <Partytown key="partytown" forward={['gtag']} />,
+    <Partytown
+      key="partytown"
+      forward={['gtag']}
+      lib={withPathPrefix('~partytown')}
+    />,
     <script
       key="google-analytics"
       type="text/partytown"
@@ -37,7 +41,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     <link
       key="Inconsolata-Regular-w2"
       rel="preload"
-      href={`${withPrefix('/')}fonts/Inconsolata-Regular.woff2`}
+      href={`${withPrefix('/fonts/Inconsolata-Regular.woff2')}`}
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -45,7 +49,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
     <link
       key="Inconsolata-ExtraLight-w2"
       rel="preload"
-      href={`${withPrefix('/')}fonts/Inconsolata-ExtraLight.woff2`}
+      href={`${withPrefix('/fonts/Inconsolata-ExtraLight.woff2')}`}
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
