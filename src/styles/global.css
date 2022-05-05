@@ -7,7 +7,8 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(/demos/rise-of-the-robots/fonts/Inconsolata-Bold.woff2) format('woff2'),
+  src: url(/demos/rise-of-the-robots/fonts/Inconsolata-Bold.woff2)
+      format('woff2'),
     url(/demos/rise-of-the-robots/fonts/Inconsolata-Bold.woff) format('woff');
 }
 @font-face {
@@ -15,7 +16,8 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(/demos/rise-of-the-robots/fonts/Inconsolata-Regular.woff2) format('woff2'),
+  src: url(/demos/rise-of-the-robots/fonts/Inconsolata-Regular.woff2)
+      format('woff2'),
     url(/demos/rise-of-the-robots/fonts/Inconsolata-Regular.woff) format('woff');
 }
 @font-face {
@@ -23,8 +25,10 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(/demos/rise-of-the-robots/fonts/Inconsolata-ExtraLight.woff2) format('woff2'),
-    url(/demos/rise-of-the-robots/fonts/Inconsolata-ExtraLight.woff) format('woff');
+  src: url(/demos/rise-of-the-robots/fonts/Inconsolata-ExtraLight.woff2)
+      format('woff2'),
+    url(/demos/rise-of-the-robots/fonts/Inconsolata-ExtraLight.woff)
+      format('woff');
 }
 
 @layer base {
@@ -47,7 +51,7 @@
     @apply w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] pt-2 pl-2;
   }
   .hero-border {
-    @apply absolute top-0 w-[300px] lg:w-[400px];
+    @apply absolute bottom-0 w-[340px] lg:w-[440px];
   }
   .rive-bot {
     @apply w-[300px] h-[300px] lg:w-[500px] lg:h-[500px];
