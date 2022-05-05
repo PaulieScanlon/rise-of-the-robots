@@ -81,7 +81,7 @@ const HeroSection = () => {
 
   return (
     <div className="grid lg:grid-cols-2 gap-12">
-      <div className="grid gap-8">
+      <div className="grid gap-8 items-center self-center">
         <div className="grid gap-2 justify-items-center lg:justify-items-start">
           <img
             src={logo.svg.dataURI}

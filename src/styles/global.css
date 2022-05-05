@@ -48,10 +48,10 @@
     @apply grid gap-y-8 lg:gap-y-12;
   }
   .hero-bot {
-    @apply w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] pt-2 pl-2;
+    @apply w-[250px] h-[250px] lg:w-[400px] lg:h-[400px];
   }
   .hero-border {
-    @apply absolute bottom-0 w-[340px] lg:w-[440px];
+    @apply absolute bottom-0 w-[300px] lg:h-[400px] lg:w-[440px];
   }
   .rive-bot {
     @apply w-[300px] h-[300px] lg:w-[500px] lg:h-[500px];
