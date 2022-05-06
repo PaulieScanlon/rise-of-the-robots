@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/PaulieScanlon/rise-of-the-robots#readme",
   "dependencies": {
-    "@builder.io/partytown": "^0.5.2",
     "@rive-app/react-canvas": "^3.0.1",
     "gatsby": "^4.12.1",
     "gatsby-plugin-image": "^2.12.1",
