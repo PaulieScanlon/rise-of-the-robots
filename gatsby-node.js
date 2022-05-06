@@ -3,6 +3,12 @@ const { copyLibFiles } = require('@builder.io/partytown/utils')
 
 exports.onPreBuild = async () => {
   await copyLibFiles(path.join(__dirname, 'static', '~partytown'))
+
+  createRedirect({
+    fromPath: `~partytown/*`,
+    toPath: `https://riseoftherobots.gatsbyjs.io/~partytown/*`,
+    statusCode: 200,
+  })
 }
 
 exports.onCreateWebpackConfig = ({ actions }) => {
