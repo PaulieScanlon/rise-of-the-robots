@@ -20,6 +20,7 @@ export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
       type="text/partytown"
       src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GOOGLE_TAG_MANAGER_ID}`}
     />,
+    // https://developers.google.com/tag-platform/tag-manager/web
     <script
       key="google-analytics-config"
       type="text/partytown"
