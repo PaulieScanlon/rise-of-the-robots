@@ -53,6 +53,7 @@ const HeroSection = () => {
           }
         }
         border {
+          title
           file {
             details {
               image {

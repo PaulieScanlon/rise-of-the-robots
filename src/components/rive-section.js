@@ -24,6 +24,7 @@ const RiveSection = () => {
           url
         }
         border {
+          title
           file {
             details {
               image {
