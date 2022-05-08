@@ -44,7 +44,7 @@ const RiveSection = () => {
   const { title, description, buttons, border } = contentfulRiveSection
 
   return (
-    <div className="grid lg:grid-cols-2 gap-12">
+    <div className="grid lg:grid-cols-2 gap-24">
       <div className="grid gap-8 items-center self-center text-center lg:text-left mx-auto max-w-section">
         <div className="grid gap-2">
           <h2 className="text-2xl">{title}</h2>

@@ -22,7 +22,7 @@ const BlogSection = () => {
   const { title, description, buttons } = contentfulBlogSection
 
   return (
-    <div className="grid lg:grid-cols-2 gap-12 self-center">
+    <div className="grid lg:grid-cols-2 gap-24 self-center">
       <div className="grid gap-8 text-center lg:text-left mx-auto max-w-section">
         <div className="grid gap-2">
           <h2 className="text-2xl">{title}</h2>
