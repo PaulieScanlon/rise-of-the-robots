@@ -81,7 +81,7 @@ const HeroSection = () => {
   } = contentfulHeroSection
 
   return (
-    <div className="grid lg:grid-cols-2 gap-12">
+    <div className="grid lg:grid-cols-2 gap-24">
       <div className="grid gap-8 items-center self-center">
         <div className="grid gap-2 justify-items-center lg:justify-items-start">
           <img

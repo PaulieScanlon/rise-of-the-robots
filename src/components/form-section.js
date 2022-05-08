@@ -56,7 +56,7 @@ const FormSection = () => {
   }
 
   return (
-    <div className="grid gap-12 lg:justify-items-center self-center">
+    <div className="grid gap-24 lg:justify-items-center self-center">
       <div className="grid gap-2 text-center mx-auto max-w-section">
         <h2 className="text-2xl">{title}</h2>
         <ContentfulRichTech richText={description} />

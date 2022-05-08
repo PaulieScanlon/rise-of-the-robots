@@ -7,28 +7,24 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(/demos/rise-of-the-robots/fonts/Inconsolata-Bold.woff2)
-      format('woff2'),
-    url(/demos/rise-of-the-robots/fonts/Inconsolata-Bold.woff) format('woff');
+  src: url(/fonts/Inconsolata-Bold.woff2) format('woff2'),
+    url(/fonts/Inconsolata-Bold.woff) format('woff');
 }
 @font-face {
   font-family: 'Inconsolata-Regular';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(/demos/rise-of-the-robots/fonts/Inconsolata-Regular.woff2)
-      format('woff2'),
-    url(/demos/rise-of-the-robots/fonts/Inconsolata-Regular.woff) format('woff');
+  src: url(/fonts/Inconsolata-Regular.woff2) format('woff2'),
+    url(/fonts/Inconsolata-Regular.woff) format('woff');
 }
 @font-face {
   font-family: 'Inconsolata-ExtraLight';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(/demos/rise-of-the-robots/fonts/Inconsolata-ExtraLight.woff2)
-      format('woff2'),
-    url(/demos/rise-of-the-robots/fonts/Inconsolata-ExtraLight.woff)
-      format('woff');
+  src: url(/fonts/Inconsolata-ExtraLight.woff2) format('woff2'),
+    url(/fonts/Inconsolata-ExtraLight.woff) format('woff');
 }
 
 @layer base {
@@ -45,7 +41,7 @@
     @apply bg-brand-background text-white;
   }
   #gatsby-focus-wrapper {
-    @apply grid gap-y-8 lg:gap-y-12;
+    @apply grid gap-y-32 lg:gap-y-64;
   }
   .hero-bot {
     @apply w-[250px] h-[250px] lg:w-[400px] lg:h-[400px];
@@ -58,6 +54,12 @@
   }
   .rive-border {
     @apply absolute lg:left-8 bottom-4 lg:bottom-12 w-[260px] lg:w-[360px];
+  }
+  .gatsby-bot {
+    @apply w-[300px] h-[300px] lg:w-[400px] lg:h-[400px];
+  }
+  .gatsby-border {
+    @apply absolute ml-[-48px] lg:ml-[-64px] top-[-16px] w-[300px] lg:h-[400px] lg:w-[400px];
   }
   .svg-link {
     @apply block p-1 hover:outline;
