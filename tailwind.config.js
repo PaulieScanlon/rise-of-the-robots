@@ -6,7 +6,7 @@ module.exports = {
       sans: ['Inconsolata-Regular', 'sans-serif'],
       heading: ['Inconsolata-Bold', 'sans-serif'],
       bold: ['Inconsolata-Bold', 'sans-serif'],
-      light: ['Inconsolata-ExtraLight', 'sans-serif'],
+      light: ['Inconsolata-Light', 'sans-serif'],
     },
     extend: {
       colors: {
@@ -16,6 +16,7 @@ module.exports = {
           secondary: '#FB74D6',
           tertiary: '#342f70',
           gray: '#eee2e3',
+          error: '#ff0000',
         },
       },
       maxWidth: {
