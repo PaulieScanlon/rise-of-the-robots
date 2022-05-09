@@ -53,7 +53,7 @@ const GatsbyBot = () => {
   }, [rive, isHoveredInput])
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="gatsby-bot">
       <RiveComponent
         role="img"
         aria-label="Gatsby Bot Animation"

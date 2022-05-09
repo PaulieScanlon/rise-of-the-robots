@@ -51,7 +51,7 @@
     @apply w-[250px] h-[250px] lg:w-[400px] lg:h-[400px];
   }
   .hero-border {
-    @apply absolute bottom-0 w-[300px] lg:h-[400px] lg:w-[440px];
+    @apply absolute bottom-0 ml-[-40px] w-[280px] lg:h-[400px] lg:w-[440px];
   }
   .rive-bot {
     @apply w-[300px] h-[300px] lg:w-[500px] lg:h-[500px];
@@ -60,10 +60,10 @@
     @apply absolute lg:left-8 bottom-4 lg:bottom-12 w-[260px] lg:w-[360px];
   }
   .gatsby-bot {
-    @apply w-[300px] h-[300px] lg:w-[400px] lg:h-[400px];
+    @apply w-[250px] h-[240px] lg:w-[400px] lg:h-[400px];
   }
   .gatsby-border {
-    @apply absolute ml-[-48px] lg:ml-[-64px] top-[-16px] w-[300px] lg:h-[400px] lg:w-[400px];
+    @apply absolute top-[-10px] w-[260px] ml-[-20px] lg:top-[-16px] lg:ml-[-64px] lg:w-[400px];
   }
   .svg-link {
     @apply block p-1 hover:outline;

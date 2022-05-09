@@ -83,12 +83,13 @@ const HeroSection = () => {
   return (
     <div className="grid lg:grid-cols-2 gap-24">
       <div className="grid gap-8 items-center self-center">
-        <div className="grid gap-2 justify-items-center lg:justify-items-start">
+        <div className="grid gap-8 lg:gap-2 justify-items-center lg:justify-items-start">
           <img
             src={logo.svg.dataURI}
             alt={logo.title}
             width={logo.file.details.image.width}
             height={logo.file.details.image.height}
+            className="w-[220px] md:w-[300px]"
           />
           <div className="text-center lg:text-left">
             <h1 className="text-2xl md:text-3xl">{eventName}</h1>
