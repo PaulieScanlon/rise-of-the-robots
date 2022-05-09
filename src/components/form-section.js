@@ -1,12 +1,21 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, lazy, Suspense } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
+
 import MarketoForm from './marketo-form'
 import ContentfulRichTech from './contentful-rich-text'
 
+import Loading from './loading'
+import usePerfLoader from '../hooks/use-perf-loader'
+
+const FormBot = lazy(() => import('../robots/form-bot'))
+
 const FormSection = () => {
+  const perfLoader = usePerfLoader()
   const [email, setEmail] = useState('')
-  const [successMsg, setSuccessMsg] = useState(null)
-  const [errorMsg, setErrorMsg] = useState(null)
+  const [successMsg, setSuccessMsg] = useState()
+  const [submittingMsg, setSubmittingMsg] = useState()
+  const [errorMsg, setErrorMsg] = useState()
   const emailInput = useRef(null)
 
   const { contentfulFormSection } = useStaticQuery(graphql`
@@ -41,9 +50,11 @@ const FormSection = () => {
     evt.preventDefault()
     if (validateEmail()) {
       if (typeof window !== 'undefined') {
+        setSubmittingMsg('Submitting...')
         window.MktoForms2.getForm(process.env.GATSBY_MKTO_FORM_ID)
           .vals({ Email: email })
           .onSuccess(() => {
+            setSubmittingMsg(null)
             setSuccessMsg(
               'Success! You have been subscribed to the Gatsby newsletter.'
             )
@@ -56,39 +67,79 @@ const FormSection = () => {
   }
 
   return (
-    <div className="grid gap-24 lg:justify-items-center self-center">
-      <div className="grid gap-2 text-center mx-auto max-w-section">
-        <h2 className="text-2xl">{title}</h2>
-        <ContentfulRichTech richText={description} />
-      </div>
-      <div className="mx-auto min-h-[90px]">
-        <form onSubmit={handleSubmit} noValidate className="grid">
-          <label
-            htmlFor="email"
-            className="text-sm text-brand-gray grid-area-1"
-          >
-            Subscribe to the Gatsby newsletter
-          </label>
-          <input
-            name="email"
-            type="email"
-            required
-            placeholder="you@example.xyz"
-            value={email}
-            ref={emailInput}
-            onChange={(e) => {
-              setEmail(e.target.value)
-            }}
-            className="text-brand-background px-2 py-1 grid-area-2 border-2 border-brand-secondary"
+    <div>
+      <div className="relative flex items-center justify-center">
+        {/* <img
+        src={border.svg.dataURI}
+        alt={border.title}
+        className="hero-border"
+      /> */}
+        {perfLoader ? (
+          <StaticImage
+            className="form-image"
+            src="../robots/form-bot.png"
+            alt="Form Bot Image"
           />
-          <button type="submit" className="button button-secondary grid-area-2">
-            Subscribe
-          </button>
-        </form>
-        {errorMsg || successMsg ? (
-          <p className="text-sm">{errorMsg || successMsg}</p>
-        ) : null}
-        <MarketoForm formId={process.env.GATSBY_MKTO_FORM_ID} />
+        ) : (
+          <Suspense fallback={<Loading />}>
+            <FormBot
+              hasError={Boolean(errorMsg)}
+              isSubmitting={Boolean(submittingMsg)}
+              isSuccess={Boolean(successMsg)}
+            />
+          </Suspense>
+        )}
+      </div>
+      <div className="grid gap-8 text-center mx-auto max-w-section">
+        <div className="grid gap-2">
+          <h2 className="text-2xl">{title}</h2>
+          <ContentfulRichTech richText={description} />
+        </div>
+        <div className="grid gap-2 justify-center mx-auto min-h-[90px] max-w-[380px]">
+          <form
+            onSubmit={handleSubmit}
+            noValidate
+            className="grid gap-y-2 content-start"
+          >
+            <label
+              htmlFor="email"
+              className="text-left text-sm text-brand-gray grid-area-1"
+            >
+              Subscribe to the Gatsby newsletter
+            </label>
+            <input
+              name="email"
+              type="email"
+              className="rounded-none"
+              required
+              placeholder="you@example.xyz"
+              value={email}
+              ref={emailInput}
+              onChange={(e) => {
+                setEmail(e.target.value)
+              }}
+              className="text-brand-background px-2 py-1 grid-area-2 border-2 border-brand-secondary"
+            />
+            <button
+              type="submit"
+              className="button button-secondary grid-area-2"
+            >
+              Subscribe
+            </button>
+          </form>
+          {errorMsg || successMsg || submittingMsg ? (
+            <p
+              className={`text-sm text-left ${
+                successMsg || submittingMsg
+                  ? 'text-brand-primary'
+                  : 'text-brand-error'
+              }`}
+            >
+              {errorMsg || successMsg || submittingMsg}
+            </p>
+          ) : null}
+          <MarketoForm formId={process.env.GATSBY_MKTO_FORM_ID} />
+        </div>
       </div>
     </div>
   )
