@@ -129,7 +129,7 @@ const FormSection = () => {
           </form>
           {errorMsg || successMsg || submittingMsg ? (
             <p
-              className={`text-sm text-left ${
+              className={`text-sm text-left max-w-[280px] ${
                 successMsg || submittingMsg
                   ? 'text-brand-primary'
                   : 'text-brand-error'

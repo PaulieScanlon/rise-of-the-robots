@@ -43,8 +43,8 @@ const GatsbyBot = () => {
         }
       },
       {
-        rootMargin: '400px',
-        threshold: 0.5,
+        rootMargin: '0px',
+        threshold: 0.1,
       }
     )
     if (ref && ref.current) {
