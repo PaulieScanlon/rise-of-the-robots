@@ -16,7 +16,7 @@ const GatsbyBot = () => {
     autoplay: true,
   })
 
-  const isHoveredInput = useStateMachineInput(rive, STATE_MACHINE, 'isHovered')
+  const isVisible = useStateMachineInput(rive, STATE_MACHINE, 'isVisible')
   const isLimitedInput = useStateMachineInput(rive, STATE_MACHINE, 'isLimited')
 
   useEffect(() => {
@@ -32,25 +32,25 @@ const GatsbyBot = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (rive && isHoveredInput) {
+        if (rive && isVisible) {
           if (entry.isIntersecting) {
-            // console.log('visible')
-            isHoveredInput.value = true
+            // console.log('isVisible')
+            isVisible.value = true
           } else {
-            // console.log('!visible')
-            isHoveredInput.value = false
+            isVisible.value = false
+            // console.log('!isVisible')
           }
         }
       },
       {
-        rootMargin: '0px',
-        threshold: 0,
+        rootMargin: '400px',
+        threshold: 0.5,
       }
     )
     if (ref && ref.current) {
       observer.observe(ref.current)
     }
-  }, [rive, isHoveredInput])
+  }, [rive, isVisible])
 
   return (
     <div ref={ref} className="gatsby-bot">

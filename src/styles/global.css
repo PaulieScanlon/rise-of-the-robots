@@ -51,13 +51,13 @@
     @apply w-[250px] h-[250px] lg:w-[400px] lg:h-[400px];
   }
   .hero-border {
-    @apply absolute bottom-0 ml-[-40px] w-[280px] lg:h-[400px] lg:w-[440px];
+    @apply absolute bottom-0 ml-[-40px] w-[280px] h-[240px] lg:h-[400px] lg:w-[440px];
   }
   .rive-bot {
-    @apply w-[300px] h-[300px] lg:w-[500px] lg:h-[500px];
+    @apply w-[280px] h-[224px] lg:w-[400px] lg:h-[345px];
   }
   .rive-border {
-    @apply absolute lg:left-8 bottom-4 lg:bottom-12 w-[260px] lg:w-[360px];
+    @apply absolute w-[280px] lg:w-[400px] bottom-[-40px] lg:bottom-[-20px];
   }
   .gatsby-bot {
     @apply w-[250px] h-[240px] lg:w-[400px] lg:h-[400px];
