@@ -40,10 +40,10 @@
     @apply flex justify-center overflow-hidden w-[280px] lg:w-[992px] lg:overflow-visible;
   }
   .form-bot {
-    @apply w-[992px] h-[330px];
+    /* @apply w-[992px] h-[280px]; */
   }
   .form-image {
-    @apply w-[280px] h-[300px];
+    @apply w-[280px] h-[331px];
   }
   .form-border {
     @apply absolute;

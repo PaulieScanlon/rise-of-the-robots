@@ -1,6 +1,12 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { useRive, useStateMachineInput } from '@rive-app/react-canvas'
+import {
+  useRive,
+  useStateMachineInput,
+  Layout,
+  Fit,
+  Alignment,
+} from '@rive-app/react-canvas'
 import usePrefersReducedMotion from '../hooks/use-prefers-reduced-motion'
 
 import Bot from './form-bot.riv'
@@ -13,6 +19,10 @@ const FormBot = ({ hasError, isSubmitting, isSuccess }) => {
   const { RiveComponent, rive } = useRive({
     src: Bot,
     stateMachines: STATE_MACHINE,
+    layout: new Layout({
+      fit: Fit.Cover,
+      alignment: Alignment.TopCenter,
+    }),
     autoplay: true,
   })
 
@@ -53,6 +63,8 @@ const FormBot = ({ hasError, isSubmitting, isSuccess }) => {
         role="img"
         aria-label="Form Bot Animation"
         className="form-bot"
+        width={992}
+        height={331}
       />
     </div>
   )
