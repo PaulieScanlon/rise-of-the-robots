@@ -2,11 +2,11 @@ import React, { useRef, useEffect } from 'react'
 import { useRive, useStateMachineInput } from '@rive-app/react-canvas'
 import usePrefersReducedMotion from '../hooks/use-prefers-reduced-motion'
 
-import Bot from './gatsby-bot.riv'
+import Bot from './blog-bot.riv'
 
 const STATE_MACHINE = 'State Machine 1'
 
-const GatsbyBot = () => {
+const BlogBot = () => {
   const ref = useRef(null)
   const prefersReducedMotion = usePrefersReducedMotion()
 
@@ -51,14 +51,14 @@ const GatsbyBot = () => {
   }, [rive, isVisible])
 
   return (
-    <div ref={ref} className="gatsby-bot">
+    <div ref={ref} className="blog-bot">
       <RiveComponent
         role="img"
-        aria-label="Gatsby Bot Animation"
-        className="gatsby-bot"
+        aria-label="Blog Bot Animation"
+        className="blog-bot"
       />
     </div>
   )
 }
 
-export default GatsbyBot
+export default BlogBot
