@@ -25,11 +25,25 @@ const FormSection = () => {
         description {
           raw
         }
+        border {
+          title
+          file {
+            details {
+              image {
+                width
+                height
+              }
+            }
+          }
+          svg {
+            dataURI
+          }
+        }
       }
     }
   `)
 
-  const { title, description } = contentfulFormSection
+  const { title, description, border } = contentfulFormSection
 
   useEffect(() => {
     validateEmail()
@@ -67,13 +81,16 @@ const FormSection = () => {
   }
 
   return (
-    <div>
+    <div className="grid gap-24 lg:gap-0">
       <div className="relative flex items-center justify-center">
-        {/* <img
-        src={border.svg.dataURI}
-        alt={border.title}
-        className="hero-border"
-      /> */}
+        <img
+          src={border.svg.dataURI}
+          alt={border.title}
+          width={border.file.details.image.width}
+          height={border.file.details.image.height}
+          className="form-border"
+        />
+
         {perfLoader ? (
           <StaticImage
             className="form-image"
@@ -90,7 +107,7 @@ const FormSection = () => {
           </Suspense>
         )}
       </div>
-      <div className="grid gap-8 text-center mx-auto max-w-section">
+      <div className="grid gap-8 row-start-1 lg:row-auto text-center mx-auto max-w-section">
         <div className="grid gap-2">
           <h2 className="text-2xl">{title}</h2>
           <ContentfulRichTech richText={description} />
