@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 import ContentfulRichTech from './contentful-rich-text'
 
+import Loading from './loading'
+import usePerfLoader from '../hooks/use-perf-loader'
+
+const BlogBot = lazy(() => import('../robots/blog-bot'))
+
 const BlogSection = () => {
+  const perfLoader = usePerfLoader()
+
   const { contentfulBlogSection } = useStaticQuery(graphql`
     {
       contentfulBlogSection {
@@ -15,15 +23,21 @@ const BlogSection = () => {
           text
           url
         }
+        border {
+          title
+          svg {
+            dataURI
+          }
+        }
       }
     }
   `)
 
-  const { title, description, buttons } = contentfulBlogSection
+  const { title, description, buttons, border } = contentfulBlogSection
 
   return (
     <div className="grid lg:grid-cols-2 gap-24 self-center">
-      <div className="grid gap-8 text-center lg:text-left mx-auto max-w-section">
+      <div className="grid gap-8 items-center self-center text-center lg:text-left mx-auto max-w-section">
         <div className="grid gap-2">
           <h2 className="text-2xl">{title}</h2>
           <ContentfulRichTech richText={description} />
@@ -45,7 +59,24 @@ const BlogSection = () => {
           })}
         </div>
       </div>
-      <div />
+      <div className="relative flex items-center justify-center">
+        <img
+          src={border.svg.dataURI}
+          alt={border.title}
+          className="blog-border"
+        />
+        {perfLoader ? (
+          <StaticImage
+            className="blog-bot"
+            src="../robots/blog-bot.png"
+            alt="Blot Bot Image"
+          />
+        ) : (
+          <Suspense fallback={<Loading />}>
+            <BlogBot />
+          </Suspense>
+        )}
+      </div>
     </div>
   )
 }

@@ -24,14 +24,6 @@ const GatsbySection = () => {
         }
         border {
           title
-          file {
-            details {
-              image {
-                width
-                height
-              }
-            }
-          }
           svg {
             dataURI
           }

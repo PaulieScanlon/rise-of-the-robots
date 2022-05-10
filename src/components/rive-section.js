@@ -25,14 +25,6 @@ const RiveSection = () => {
         }
         border {
           title
-          file {
-            details {
-              image {
-                width
-                height
-              }
-            }
-          }
           svg {
             dataURI
           }

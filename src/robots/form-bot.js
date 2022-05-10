@@ -58,7 +58,7 @@ const FormBot = ({ hasError, isSubmitting, isSuccess }) => {
   }, [rive, statesInput, hasError, isSubmitting, isSuccess])
 
   return (
-    <div className="form-bot">
+    <div className="form-bot-container">
       <RiveComponent
         role="img"
         aria-label="Form Bot Animation"
