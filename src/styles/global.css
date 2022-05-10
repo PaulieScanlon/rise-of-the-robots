@@ -39,6 +39,12 @@
   .form-bot-container {
     @apply overflow-hidden w-[280px] lg:w-[992px] lg:overflow-visible;
   }
+  .blog-bot {
+    @apply absolute rounded-full overflow-hidden w-[280px] h-[280px] lg:w-[380px] lg:h-[380px];
+  }
+  .blog-border {
+    @apply w-[280px] h-[280px] lg:w-[500px] lg:h-[500px] z-10;
+  }
   .form-image {
     @apply w-[280px] h-[331px];
   }
