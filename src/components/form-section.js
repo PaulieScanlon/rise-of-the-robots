@@ -2,13 +2,13 @@ import React, { useState, useEffect, useRef, lazy, Suspense } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
-import MarketoForm from './marketo-form'
 import ContentfulRichTech from './contentful-rich-text'
 
 import Loading from './loading'
 import usePerfLoader from '../hooks/use-perf-loader'
 
 const FormBot = lazy(() => import('../robots/form-bot'))
+const MarketoForm = lazy(() => import('./marketo-form'))
 
 const FormSection = () => {
   const perfLoader = usePerfLoader()
@@ -155,7 +155,9 @@ const FormSection = () => {
               {errorMsg || successMsg || submittingMsg}
             </p>
           ) : null}
-          <MarketoForm formId={process.env.GATSBY_MKTO_FORM_ID} />
+          <Suspense fallback={<Loading />}>
+            <MarketoForm formId={process.env.GATSBY_MKTO_FORM_ID} />
+          </Suspense>
         </div>
       </div>
     </div>
