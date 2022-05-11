@@ -4,11 +4,11 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 import ContentfulRichTech from './contentful-rich-text'
 
+import MarketoForm from './marketo-form'
 import Loading from './loading'
 import usePerfLoader from '../hooks/use-perf-loader'
 
 const FormBot = lazy(() => import('../robots/form-bot'))
-const MarketoForm = lazy(() => import('./marketo-form'))
 
 const FormSection = () => {
   const perfLoader = usePerfLoader()
@@ -155,9 +155,7 @@ const FormSection = () => {
               {errorMsg || successMsg || submittingMsg}
             </p>
           ) : null}
-          <Suspense fallback={<Loading />}>
-            <MarketoForm formId={process.env.GATSBY_MKTO_FORM_ID} />
-          </Suspense>
+          <MarketoForm formId={process.env.GATSBY_MKTO_FORM_ID} />
         </div>
       </div>
     </div>
