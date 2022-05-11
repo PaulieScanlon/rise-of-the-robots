@@ -89,7 +89,6 @@ const HeroSection = () => {
             alt={logo.title}
             width={logo.file.details.image.width}
             height={logo.file.details.image.height}
-            className="w-[220px] md:w-[300px]"
           />
           <div className="grid gap-8 justify-items-center lg:justify-items-start">
             <div className="text-center lg:text-left">
