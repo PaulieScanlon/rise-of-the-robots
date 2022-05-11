@@ -1,27 +1,31 @@
 import React, { useEffect } from 'react'
-import { useRive } from '@rive-app/react-canvas'
+import { useRive, useStateMachineInput } from '@rive-app/react-canvas'
 import usePrefersReducedMotion from '../hooks/use-prefers-reduced-motion'
 
 import Bot from './hero-bot.riv'
+
+const STATE_MACHINE = 'State Machine 1'
 
 const HeroBot = () => {
   const prefersReducedMotion = usePrefersReducedMotion()
 
   const { RiveComponent, rive } = useRive({
     src: Bot,
-    stateMachines: 'Idle',
+    stateMachines: STATE_MACHINE,
     autoplay: true,
   })
 
+  const isLimitedInput = useStateMachineInput(rive, STATE_MACHINE, 'isLimited')
+
   useEffect(() => {
-    if (rive) {
+    if (rive && isLimitedInput) {
       if (prefersReducedMotion) {
-        rive.pause()
+        isLimitedInput.value = true
       } else {
-        rive.play()
+        isLimitedInput.value = false
       }
     }
-  }, [rive, prefersReducedMotion])
+  }, [rive, prefersReducedMotion, isLimitedInput])
 
   return (
     <RiveComponent
