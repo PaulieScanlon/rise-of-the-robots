@@ -9,16 +9,17 @@ const STATE_MACHINE = 'State Machine 1'
 
 const RiveBot = () => {
   const prefersReducedMotion = usePrefersReducedMotion()
-  const mousePosition = useMousePosition()
 
   const [maxWidth, setMaxWidth] = useState()
   const [maxHeight, setMaxHeight] = useState()
 
-  const { RiveComponent, rive } = useRive({
+  const { RiveComponent, rive, canvas } = useRive({
     src: Bot,
     stateMachines: STATE_MACHINE,
     autoplay: true,
   })
+
+  const mousePosition = useMousePosition(canvas)
 
   const isLimitedInput = useStateMachineInput(rive, STATE_MACHINE, 'isLimited')
   const xAxisInput = useStateMachineInput(rive, STATE_MACHINE, 'xAxis', 0)
@@ -26,13 +27,12 @@ const RiveBot = () => {
   const isHoverInput = useStateMachineInput(rive, STATE_MACHINE, 'isHover')
 
   useEffect(() => {
-    const body = document.querySelector('body')
-    if (body) {
-      const bodyRect = body.getBoundingClientRect()
-      setMaxWidth(bodyRect.right)
-      setMaxHeight(bodyRect.bottom)
+    if (canvas) {
+      const canvasRect = canvas.getBoundingClientRect()
+      setMaxWidth(canvasRect.right)
+      setMaxHeight(canvasRect.bottom)
     }
-  }, [])
+  }, [canvas])
 
   useEffect(() => {
     if (rive && isLimitedInput) {
