@@ -22,7 +22,7 @@
     @apply w-[250px] h-[250px] lg:w-[400px] lg:h-[400px];
   }
   .hero-border {
-    @apply absolute bottom-0 ml-[-40px] w-[280px] h-[240px] lg:h-[400px] lg:w-[440px];
+    @apply absolute bottom-0 ml-[-40px] w-[280px] h-[240px] lg:h-[380px] lg:w-[440px];
   }
   .rive-bot {
     @apply w-[280px] h-[224px] lg:w-[400px] lg:h-[345px];

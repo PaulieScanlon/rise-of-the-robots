@@ -26,6 +26,7 @@
   "dependencies": {
     "@rive-app/react-canvas": "^3.0.1",
     "gatsby": "^4.15.0-alpha-gatsby-script.22",
+    "gatsby-plugin-gatsby-cloud": "^4.14.0",
     "gatsby-plugin-image": "^2.12.1",
     "gatsby-plugin-react-helmet": "^5.12.1",
     "gatsby-plugin-sharp": "^4.12.1",
