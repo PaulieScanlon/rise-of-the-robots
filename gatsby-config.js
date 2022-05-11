@@ -10,6 +10,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-postcss',
     'gatsby-transformer-inline-svg',
+    'gatsby-plugin-gatsby-cloud',
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
