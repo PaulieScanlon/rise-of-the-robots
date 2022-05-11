@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef, lazy, Suspense } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
-import MarketoForm from './marketo-form'
 import ContentfulRichTech from './contentful-rich-text'
 
+import MarketoForm from './marketo-form'
 import Loading from './loading'
 import usePerfLoader from '../hooks/use-perf-loader'
 
