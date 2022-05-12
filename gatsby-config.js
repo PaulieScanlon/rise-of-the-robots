@@ -1,6 +1,8 @@
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.${process.env.NODE_ENV || `production`}`, // Weird that `yarn serve` doesn't set NODE_ENV to production, this is a stopgap
 })
+
+const GTM_ORIGIN = 'https://www.googletagmanager.com'
 
 module.exports = {
   pathPrefix: '/demos/rise-of-the-robots',
@@ -37,5 +39,8 @@ module.exports = {
         host: process.env.CONTENTFUL_HOST,
       },
     },
+  ],
+  partytownProxiedURLs: [
+    `${GTM_ORIGIN}/gtag/js?id=${process.env.GATSBY_GOOGLE_TAG_MANAGER_ID}`,
   ],
 }
