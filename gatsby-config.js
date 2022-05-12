@@ -37,5 +37,7 @@ module.exports = {
         host: process.env.CONTENTFUL_HOST,
       },
     },
+    'gatsby-plugin-perf-budgets',
+    'gatsby-plugin-webpack-bundle-analyser-v2',
   ],
 }
