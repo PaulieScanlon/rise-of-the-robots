@@ -27,10 +27,21 @@ const RiveBot = () => {
   const isHoverInput = useStateMachineInput(rive, STATE_MACHINE, 'isHover')
 
   useEffect(() => {
+    let observer
     if (canvas) {
-      const canvasRect = canvas.getBoundingClientRect()
-      setMaxWidth(canvasRect.right)
-      setMaxHeight(canvasRect.bottom)
+      const setCanvasDimensions = () => {
+        const canvasRect = canvas.getBoundingClientRect()
+        setMaxWidth(canvasRect.width)
+        setMaxHeight(canvasRect.height)
+      }
+
+      observer = new ResizeObserver(setCanvasDimensions).observe(canvas)
+    }
+
+    return () => {
+      if (canvas && observer) {
+        observer.disconnect()
+      }
     }
   }, [canvas])
 
