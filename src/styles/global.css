@@ -37,16 +37,19 @@
     @apply absolute top-[-10px] w-[260px] ml-[-20px] lg:top-[-16px] lg:ml-[-64px] lg:w-[400px];
   }
   .form-bot-container {
-    @apply overflow-hidden w-[280px] lg:w-[992px] lg:overflow-visible;
+    @apply relative flex justify-center overflow-hidden w-[280px] lg:w-[992px] lg:overflow-visible;
   }
   .blog-bot {
     @apply absolute rounded-full overflow-hidden w-[280px] h-[280px] lg:w-[380px] lg:h-[380px];
   }
   .blog-border {
-    @apply w-[280px] h-[280px] lg:w-[500px] lg:h-[500px] z-10;
+    @apply absolute w-[280px] h-[280px] lg:w-[500px] lg:h-[500px] z-10;
+  }
+  .blog-image {
+    @apply mx-auto w-[280px] h-[280px] lg:w-[380px] lg:h-[380px];
   }
   .form-image {
-    @apply w-[280px] h-[331px];
+    @apply mx-auto w-[280px] h-[331px];
   }
   .form-border {
     @apply absolute top-[-40px];
@@ -61,7 +64,7 @@
     @apply bg-brand-primary text-brand-background hover:bg-brand-gray;
   }
   .button-secondary {
-    @apply bg-brand-secondary text-brand-background hover:bg-brand-gray;
+    @apply bg-brand-secondary text-brand-background hover:bg-brand-gray disabled:bg-brand-gray disabled:text-brand-background disabled:cursor-not-allowed;
   }
   .button-ghost {
     @apply underline text-brand-secondary hover:text-white;

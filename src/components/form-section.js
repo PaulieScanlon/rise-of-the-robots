@@ -82,7 +82,7 @@ const FormSection = () => {
 
   return (
     <div className="grid gap-24 lg:gap-0">
-      <div className="relative flex items-center justify-center">
+      <div className="relative form-image flex items-center justify-center">
         <img
           src={border.svg.dataURI}
           alt={border.title}
@@ -140,6 +140,7 @@ const FormSection = () => {
             <button
               type="submit"
               className="button button-secondary grid-area-2"
+              disabled={errorMsg}
             >
               Subscribe
             </button>

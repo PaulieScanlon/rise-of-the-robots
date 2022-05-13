@@ -59,7 +59,7 @@ const BlogSection = () => {
           })}
         </div>
       </div>
-      <div className="relative flex items-center justify-center">
+      <div className="relative flex blog-image items-center justify-center">
         <img
           src={border.svg.dataURI}
           alt={border.title}
