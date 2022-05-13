@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
+import ContentfulRichTech from './contentful-rich-text'
 
 import Loading from './loading'
 import usePerfLoading from '../hooks/use-perf-loading'
@@ -29,7 +30,9 @@ const HeroSection = () => {
         }
         eventName
         eventTagline
-        eventDetails
+        eventDetails {
+          raw
+        }
         button {
           text
           type
@@ -96,7 +99,8 @@ const HeroSection = () => {
               <h2 className="text-md font-light">{eventTagline}</h2>
             </div>
             <div className="grid gap-4 text-center lg:text-left justify-items-center lg:justify-items-start">
-              <h3 className="text-md font-bold">{eventDetails}</h3>
+              <ContentfulRichTech richText={eventDetails} />
+              {/* <h3 className="text-md font-bold">{eventDetails}</h3> */}
               <a
                 href={url}
                 target="_blank"

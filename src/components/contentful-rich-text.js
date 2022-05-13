@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
@@ -19,13 +19,12 @@ const options = {
         {children}
       </a>
     ),
-
     [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
   },
 }
 
 const ContentfulRichTech = ({ richText }) => {
-  return <Fragment>{renderRichText(richText, options)}</Fragment>
+  return <div>{renderRichText(richText, options)}</div>
 }
 
 ContentfulRichTech.propTypes = {
