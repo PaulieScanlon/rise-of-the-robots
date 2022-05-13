@@ -4,12 +4,12 @@ import { StaticImage } from 'gatsby-plugin-image'
 import ContentfulRichTech from './contentful-rich-text'
 
 import Loading from './loading'
-import usePerfLoader from '../hooks/use-perf-loader'
+import usePerfLoading from '../hooks/use-perf-loading'
 
 const BlogBot = lazy(() => import('../robots/blog-bot'))
 
 const BlogSection = () => {
-  const perfLoader = usePerfLoader()
+  const perfLoader = usePerfLoading()
 
   const { contentfulBlogSection } = useStaticQuery(graphql`
     {

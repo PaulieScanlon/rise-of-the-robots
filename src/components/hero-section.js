@@ -3,12 +3,12 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
 import Loading from './loading'
-import usePerfLoader from '../hooks/use-perf-loader'
+import usePerfLoading from '../hooks/use-perf-loading'
 
 const HeroBot = lazy(() => import('../robots/hero-bot'))
 
 const HeroSection = () => {
-  const perfLoader = usePerfLoader()
+  const perfLoader = usePerfLoading()
 
   const { contentfulHeroSection } = useStaticQuery(graphql`
     {

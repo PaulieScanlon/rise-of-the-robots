@@ -6,12 +6,12 @@ import ContentfulRichTech from './contentful-rich-text'
 
 import MarketoForm from './marketo-form'
 import Loading from './loading'
-import usePerfLoader from '../hooks/use-perf-loader'
+import usePerfLoading from '../hooks/use-perf-loading'
 
 const FormBot = lazy(() => import('../robots/form-bot'))
 
 const FormSection = () => {
-  const perfLoader = usePerfLoader()
+  const perfLoader = usePerfLoading()
   const [email, setEmail] = useState('')
   const [successMsg, setSuccessMsg] = useState()
   const [submittingMsg, setSubmittingMsg] = useState()
