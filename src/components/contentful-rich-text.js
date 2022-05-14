@@ -24,7 +24,7 @@ const options = {
 }
 
 const ContentfulRichTech = ({ richText }) => {
-  return <div>{renderRichText(richText, options)}</div>
+  return richText ? <div>{renderRichText(richText, options)}</div> : null
 }
 
 ContentfulRichTech.propTypes = {
