@@ -1,9 +1,9 @@
 import React, { lazy, Suspense } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-import ContentfulRichTech from './contentful-rich-text'
+import ContentfulRichTech from '../components/contentful-rich-text'
 
-import Loading from './loading'
+import Loading from '../components/loading'
 import usePerfLoading from '../hooks/use-perf-loading'
 
 const HeroBot = lazy(() => import('../robots/hero-bot'))

@@ -1,19 +1,19 @@
 import React, { lazy, Suspense } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-import ContentfulRichTech from './contentful-rich-text'
+import ContentfulRichTech from '../components/contentful-rich-text'
 
-import Loading from './loading'
+import Loading from '../components/loading'
 import usePerfLoading from '../hooks/use-perf-loading'
 
-const RiveBot = lazy(() => import('../robots/rive-bot'))
+const BlogBot = lazy(() => import('../robots/blog-bot'))
 
-const RiveSection = () => {
+const BlogSection = () => {
   const perfLoader = usePerfLoading()
 
-  const { contentfulRiveSection } = useStaticQuery(graphql`
+  const { contentfulBlogSection } = useStaticQuery(graphql`
     {
-      contentfulRiveSection {
+      contentfulBlogSection {
         title
         description {
           raw
@@ -33,10 +33,10 @@ const RiveSection = () => {
     }
   `)
 
-  const { title, description, buttons, border } = contentfulRiveSection
+  const { title, description, buttons, border } = contentfulBlogSection
 
   return (
-    <div className="grid lg:grid-cols-2 gap-24">
+    <div className="grid lg:grid-cols-2 gap-24 self-center">
       <div className="grid gap-8 items-center self-center text-center lg:text-left mx-auto max-w-section">
         <div className="grid gap-2">
           <h2 className="text-2xl">{title}</h2>
@@ -59,21 +59,21 @@ const RiveSection = () => {
           })}
         </div>
       </div>
-      <div className="relative lg:row-start-1 flex items-center justify-center">
+      <div className="relative flex blog-image items-center justify-center">
         <img
           src={border.svg.dataURI}
           alt={border.title}
-          className="rive-border"
+          className="blog-border"
         />
         {perfLoader ? (
           <StaticImage
-            className="rive-bot"
-            src="../robots/rive-bot.png"
-            alt="Rive Bot Image"
+            className="blog-bot"
+            src="../robots/blog-bot.png"
+            alt="Blot Bot Image"
           />
         ) : (
           <Suspense fallback={<Loading />}>
-            <RiveBot />
+            <BlogBot />
           </Suspense>
         )}
       </div>
@@ -81,4 +81,4 @@ const RiveSection = () => {
   )
 }
 
-export default RiveSection
+export default BlogSection

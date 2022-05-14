@@ -58,7 +58,7 @@
     @apply block p-1 hover:outline;
   }
   .button {
-    @apply inline-flex self-center justify-center items-center px-3 py-2;
+    @apply inline-flex self-center justify-center items-center px-3 py-2 cursor-pointer;
   }
   .button-primary {
     @apply bg-brand-primary text-brand-background hover:bg-brand-gray;
