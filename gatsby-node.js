@@ -5,3 +5,8 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     },
   })
 }
+
+exports.onPostBuild = ({ store }) => {
+  const { redirects } = store.getState()
+  console.log(`Applied redirects:`, redirects)
+}

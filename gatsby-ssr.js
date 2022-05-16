@@ -1,13 +1,17 @@
 import React from 'react'
-import { withPrefix } from 'gatsby'
-
+import { withPrefix, Script, ScriptStrategy } from 'gatsby'
 import RootElement from './src/components/root-element'
+import PageElement from './src/components/page-element'
 
 export const wrapRootElement = ({ element }) => {
   return <RootElement>{element}</RootElement>
 }
 
-export const onRenderBody = ({ setHeadComponents, setBodyAttributes }) => {
+export const wrapPageElement = ({ element }) => {
+  return <PageElement>{element}</PageElement>
+}
+
+export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <link
       key="Inconsolata-Bold-w2"
