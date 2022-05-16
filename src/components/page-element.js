@@ -4,7 +4,6 @@ import { Script, ScriptStrategy } from 'gatsby'
 const GTM_ORIGIN = 'https://www.googletagmanager.com'
 
 const PageElement = ({ children }) => {
-  console.log('test')
   return (
     <Fragment>
       {children}
