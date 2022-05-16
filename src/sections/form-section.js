@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, lazy, Suspense } from 'react'
+import React, { useState, useRef, lazy, Suspense } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
@@ -45,10 +45,6 @@ const FormSection = () => {
 
   const { title, description, border } = contentfulFormSection
 
-  useEffect(() => {
-    validateEmail()
-  }, [email])
-
   const validateEmail = () => {
     const isValid = emailInput.current.checkValidity()
     if (email && !isValid) {
@@ -70,7 +66,7 @@ const FormSection = () => {
           .onSuccess(() => {
             setSubmittingMsg(null)
             setSuccessMsg(
-              'Success! You have been subscribed to the Gatsby newsletter.'
+              'Success! You have been subscribed to the Gatsby Gazette.'
             )
             setEmail('')
             return false
@@ -122,7 +118,7 @@ const FormSection = () => {
               htmlFor="email"
               className="text-left text-sm text-brand-gray grid-area-1"
             >
-              Subscribe to the Gatsby newsletter
+              Subscribe to the Gatsby Gazette
             </label>
             <input
               name="email"
@@ -139,7 +135,6 @@ const FormSection = () => {
             <button
               type="submit"
               className="button button-secondary grid-area-2"
-              disabled={errorMsg}
             >
               Subscribe
             </button>

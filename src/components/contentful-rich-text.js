@@ -14,7 +14,7 @@ const options = {
         href={node.data.uri}
         target="_blank"
         rel="noreferrer"
-        className="text-brand-link underline"
+        className="text-brand-link cursor-pointer underline hover:text-brand-secondary"
       >
         {children}
       </a>
