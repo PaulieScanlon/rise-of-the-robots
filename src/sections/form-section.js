@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef, lazy, Suspense } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
-import ContentfulRichTech from './contentful-rich-text'
+import ContentfulRichTech from '../components/contentful-rich-text'
 
-import MarketoForm from './marketo-form'
-import Loading from './loading'
+import MarketoForm from '../components/marketo-form'
+import Loading from '../components/loading'
 import usePerfLoading from '../hooks/use-perf-loading'
 
 const FormBot = lazy(() => import('../robots/form-bot'))
@@ -127,7 +127,6 @@ const FormSection = () => {
             <input
               name="email"
               type="email"
-              className="rounded-none"
               required
               placeholder="you@example.xyz"
               value={email}
@@ -135,7 +134,7 @@ const FormSection = () => {
               onChange={(e) => {
                 setEmail(e.target.value)
               }}
-              className="text-brand-background px-2 py-1 grid-area-2 border-2 border-brand-secondary"
+              className="rounded-none text-brand-background px-2 py-1 grid-area-2 border-2 border-brand-secondary"
             />
             <button
               type="submit"

@@ -9,7 +9,7 @@ const RootElement = ({ children }) => {
     <Fragment>
       <Seo />
       <Header />
-      <main className="relative py-20">
+      <main className="relative">
         <div className="relative max-w-screen-lg min-w-[320px] min-h-[1800px] mx-auto px-4 py-20 z-10">
           {children}
         </div>
