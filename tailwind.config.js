@@ -20,7 +20,7 @@ module.exports = {
         },
       },
       maxWidth: {
-        section: '768px',
+        section: '748px',
       },
       gridTemplateColumns: {
         ['auto-auto']: 'auto auto',

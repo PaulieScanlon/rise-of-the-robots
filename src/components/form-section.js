@@ -2,16 +2,16 @@ import React, { useState, useEffect, useRef, lazy, Suspense } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
-import MarketoForm from './marketo-form'
 import ContentfulRichTech from './contentful-rich-text'
 
+import MarketoForm from './marketo-form'
 import Loading from './loading'
-import usePerfLoader from '../hooks/use-perf-loader'
+import usePerfLoading from '../hooks/use-perf-loading'
 
 const FormBot = lazy(() => import('../robots/form-bot'))
 
 const FormSection = () => {
-  const perfLoader = usePerfLoader()
+  const perfLoader = usePerfLoading()
   const [email, setEmail] = useState('')
   const [successMsg, setSuccessMsg] = useState()
   const [submittingMsg, setSubmittingMsg] = useState()
@@ -82,7 +82,7 @@ const FormSection = () => {
 
   return (
     <div className="grid gap-24 lg:gap-0">
-      <div className="relative flex items-center justify-center">
+      <div className="relative form-image flex items-center justify-center">
         <img
           src={border.svg.dataURI}
           alt={border.title}
@@ -140,6 +140,7 @@ const FormSection = () => {
             <button
               type="submit"
               className="button button-secondary grid-area-2"
+              disabled={errorMsg}
             >
               Subscribe
             </button>

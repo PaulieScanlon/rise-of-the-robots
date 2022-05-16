@@ -4,12 +4,12 @@ import { StaticImage } from 'gatsby-plugin-image'
 import ContentfulRichTech from './contentful-rich-text'
 
 import Loading from './loading'
-import usePerfLoader from '../hooks/use-perf-loader'
+import usePerfLoading from '../hooks/use-perf-loading'
 
 const RiveBot = lazy(() => import('../robots/rive-bot'))
 
 const RiveSection = () => {
-  const perfLoader = usePerfLoader()
+  const perfLoader = usePerfLoading()
 
   const { contentfulRiveSection } = useStaticQuery(graphql`
     {

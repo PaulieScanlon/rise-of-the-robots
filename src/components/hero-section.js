@@ -1,14 +1,15 @@
 import React, { lazy, Suspense } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
+import ContentfulRichTech from './contentful-rich-text'
 
 import Loading from './loading'
-import usePerfLoader from '../hooks/use-perf-loader'
+import usePerfLoading from '../hooks/use-perf-loading'
 
 const HeroBot = lazy(() => import('../robots/hero-bot'))
 
 const HeroSection = () => {
-  const perfLoader = usePerfLoader()
+  const perfLoader = usePerfLoading()
 
   const { contentfulHeroSection } = useStaticQuery(graphql`
     {
@@ -29,7 +30,9 @@ const HeroSection = () => {
         }
         eventName
         eventTagline
-        eventDetails
+        eventDetails {
+          raw
+        }
         button {
           text
           type
@@ -89,7 +92,6 @@ const HeroSection = () => {
             alt={logo.title}
             width={logo.file.details.image.width}
             height={logo.file.details.image.height}
-            className="w-[220px] md:w-[300px]"
           />
           <div className="grid gap-8 justify-items-center lg:justify-items-start">
             <div className="text-center lg:text-left">
@@ -97,7 +99,8 @@ const HeroSection = () => {
               <h2 className="text-md font-light">{eventTagline}</h2>
             </div>
             <div className="grid gap-4 text-center lg:text-left justify-items-center lg:justify-items-start">
-              <h3 className="text-md font-bold">{eventDetails}</h3>
+              <ContentfulRichTech richText={eventDetails} />
+              {/* <h3 className="text-md font-bold">{eventDetails}</h3> */}
               <a
                 href={url}
                 target="_blank"

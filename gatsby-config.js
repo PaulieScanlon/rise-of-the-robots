@@ -1,5 +1,5 @@
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV || `production`}`, // Weird that `yarn serve` doesn't set NODE_ENV to production, this is a stopgap
+  path: `.env.${process.env.NODE_ENV || `production`}`,
 })
 
 const GTM_ORIGIN = 'https://www.googletagmanager.com'
@@ -39,6 +39,8 @@ module.exports = {
         host: process.env.CONTENTFUL_HOST,
       },
     },
+    'gatsby-plugin-perf-budgets',
+    'gatsby-plugin-webpack-bundle-analyser-v2',
   ],
   partytownProxiedURLs: [
     `${GTM_ORIGIN}/gtag/js?id=${process.env.GATSBY_GOOGLE_TAG_MANAGER_ID}`,

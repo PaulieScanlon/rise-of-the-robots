@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const usePerfLoader = () => {
+const usePerfLoading = () => {
   const [isPerf, setIsPerf] = useState(true)
 
   useEffect(() => {
@@ -17,4 +17,4 @@ const usePerfLoader = () => {
   return isPerf
 }
 
-export default usePerfLoader
+export default usePerfLoading
