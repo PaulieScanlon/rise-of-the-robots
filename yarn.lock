@@ -6229,7 +6229,7 @@ gatsby-plugin-gatsby-cloud@^4.14.0:
     lodash "^4.17.21"
     webpack-assets-manifest "^5.1.0"
 
-gatsby-plugin-image@^2.12.1:
+gatsby-plugin-image@2.12.1:
   version "2.12.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-image/-/gatsby-plugin-image-2.12.1.tgz#302324125a1e018ff669772495f4b291bd00a832"
   integrity sha512-Azofblt5ZSk2NqCOrBI1WijcJw6dVHCKz85lz6J7qB3Fvy+YVjs/vbUODlXUwi3926Q5m7C2zdH0MQrk4T0DDQ==
