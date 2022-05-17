@@ -33,6 +33,7 @@ const HeroSection = () => {
         eventDetails {
           raw
         }
+        hideButton
         button {
           text
           type
@@ -78,6 +79,7 @@ const HeroSection = () => {
     eventName,
     eventTagline,
     eventDetails,
+    hideButton,
     button: { text, type, url },
     links,
     border,
@@ -100,15 +102,16 @@ const HeroSection = () => {
             </div>
             <div className="grid gap-4 text-center lg:text-left justify-items-center lg:justify-items-start">
               <ContentfulRichTech richText={eventDetails} />
-              {/* <h3 className="text-md font-bold">{eventDetails}</h3> */}
-              <a
-                href={url}
-                target="_blank"
-                rel="noreferrer"
-                className={`button button-${type}`}
-              >
-                {text}
-              </a>
+              {hideButton ? null : (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`button button-${type}`}
+                >
+                  {text}
+                </a>
+              )}
             </div>
           </div>
         </div>
