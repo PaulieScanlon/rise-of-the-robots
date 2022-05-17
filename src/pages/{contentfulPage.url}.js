@@ -47,9 +47,10 @@ const Page = ({
       {sections.map((section, index) => {
         const { __typename } = section
 
-        return hiddenSections
-          .map((section) => section.content)
-          .includes(__typename) ? null : (
+        return Array.isArray(hiddenSections) &&
+          hiddenSections
+            .map((section) => section.content)
+            .includes(__typename) ? null : (
           <section key={index}>{getSection(__typename)}</section>
         )
       })}
