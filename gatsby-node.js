@@ -11,7 +11,7 @@ exports.onPostBuild = ({ store }) => {
   console.log(`Applied redirects:`, redirects)
 }
 
-exports.onCreatePages = ({ actions }) => {
+exports.createPages = ({ actions }) => {
   const { createRedirect } = actions
 
   createRedirect({
