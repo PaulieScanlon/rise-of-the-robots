@@ -2,8 +2,6 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV || `production`}`,
 })
 
-const GTM_ORIGIN = 'https://www.googletagmanager.com'
-
 module.exports = {
   pathPrefix: '/demos/rise-of-the-robots',
   plugins: [
@@ -41,8 +39,5 @@ module.exports = {
     },
     'gatsby-plugin-perf-budgets',
     'gatsby-plugin-webpack-bundle-analyser-v2',
-  ],
-  partytownProxiedURLs: [
-    `${GTM_ORIGIN}/gtag/js?id=${process.env.GATSBY_GOOGLE_TAG_MANAGER_ID}`,
   ],
 }

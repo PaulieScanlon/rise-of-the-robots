@@ -1,3 +1,6 @@
+const path = require('path')
+const { copyLibFiles } = require('@builder.io/partytown/utils')
+
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     module: {
@@ -6,23 +9,13 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   })
 }
 
-exports.onPostBuild = ({ store }) => {
-  const { redirects } = store.getState()
-  console.log(`Applied redirects:`, redirects)
-}
-
-exports.createPages = ({ actions }) => {
+exports.onPreBuild = async ({ actions }) => {
   const { createRedirect } = actions
+  await copyLibFiles(path.join(__dirname, 'static', '~partytown'))
 
   createRedirect({
     fromPath: `/~partytown/*`,
     toPath: `/demos/rise-of-the-robots/~partytown/*`,
-    statusCode: 200,
-  })
-
-  createRedirect({
-    fromPath: `/__partytown-proxy?url=:url`,
-    toPath: `/demos/rise-of-the-robots/__partytown-proxy?url=:url`,
     statusCode: 200,
   })
 }
