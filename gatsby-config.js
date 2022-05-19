@@ -38,12 +38,9 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-gtag',
+      resolve: 'gatsby-plugin-google-tagmanager',
       options: {
-        trackingIds: [`${process.env.GATSBY_GOOGLE_TAG_MANAGER_ID}`],
-        pluginConfig: {
-          head: false,
-        },
+        id: `${process.env.GATSBY_GOOGLE_TAG_MANAGER_ID}`,
       },
     },
     'gatsby-plugin-perf-budgets',
