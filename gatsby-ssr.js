@@ -1,9 +1,6 @@
 import React from 'react'
 import { withPrefix } from 'gatsby'
-import { Partytown } from '@builder.io/partytown/react'
 import RootElement from './src/components/root-element'
-
-const GTM_ORIGIN = 'https://www.googletagmanager.com'
 
 export const wrapRootElement = ({ element }) => {
   return <RootElement>{element}</RootElement>
@@ -11,24 +8,6 @@ export const wrapRootElement = ({ element }) => {
 
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
-    <Partytown key="partytown" forward={['gtag']} />,
-    <script
-      key="google-analytics"
-      type="text/partytown"
-      src={`${GTM_ORIGIN}/gtag/js?id=${process.env.GATSBY_GOOGLE_TAG_MANAGER_ID}`}
-    />,
-    <script
-      key="google-analytics-config"
-      type="text/partytown"
-      dangerouslySetInnerHTML={{
-        __html: `
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function gtag(){ window.dataLayer.push(arguments);}
-      gtag('js', new Date()); 
-      gtag('config', '${process.env.GATSBY_GOOGLE_TAG_MANAGER_ID}', { send_page_view: false })
-    `,
-      }}
-    />,
     <link
       key="Inconsolata-Bold-w2"
       rel="preload"

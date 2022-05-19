@@ -1023,11 +1023,6 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
-"@builder.io/partytown@^0.5.4":
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/@builder.io/partytown/-/partytown-0.5.4.tgz#1a89069978734e132fa4a59414ddb64e4b94fde7"
-  integrity sha512-qnikpQgi30AS01aFlNQV6l8/qdZIcP76mp90ti+u4rucXHsn4afSKivQXApqxvrQG9+Ibv45STyvHizvxef/7A==
-
 "@commitlint/cli@^16.2.3":
   version "16.3.0"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-16.3.0.tgz#5689f5c2abbb7880d5ff13329251e5648a784b16"
@@ -6134,6 +6129,14 @@ gatsby-plugin-gatsby-cloud@^4.14.0:
     kebab-hash "^0.1.2"
     lodash "^4.17.21"
     webpack-assets-manifest "^5.1.0"
+
+gatsby-plugin-google-gtag@^4.14.0:
+  version "4.14.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-4.14.0.tgz#6f28b5b3cac656b9b0b7445367ac9e1764ee836b"
+  integrity sha512-Nd0HHHldouY6oYQtHRrELRssQDO1SfPo9Etu+dmrkBvBREQeDZsYmuYhltyPWx+lC94Rr0irBy5y/DyJm6I6CQ==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    minimatch "^3.1.2"
 
 gatsby-plugin-image@2.12.1:
   version "2.12.1"

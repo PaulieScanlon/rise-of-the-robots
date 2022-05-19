@@ -37,6 +37,15 @@ module.exports = {
         host: process.env.CONTENTFUL_HOST,
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: [`${process.env.GATSBY_GOOGLE_TAG_MANAGER_ID}`],
+        pluginConfig: {
+          head: false,
+        },
+      },
+    },
     'gatsby-plugin-perf-budgets',
     'gatsby-plugin-webpack-bundle-analyser-v2',
   ],
