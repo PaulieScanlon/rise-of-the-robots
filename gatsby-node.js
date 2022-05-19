@@ -15,7 +15,7 @@ exports.onPreBuild = async ({ actions }) => {
 
   createRedirect({
     fromPath: `/~partytown/*`,
-    toPath: `/demos/rise-of-the-robots/~partytown/*`,
+    toPath: `https://riseoftherobots.gatsbyjs.io/~partytown/*`,
     statusCode: 200,
   })
 }
