@@ -21,8 +21,8 @@ exports.onCreatePages = ({ actions }) => {
   })
 
   createRedirect({
-    fromPath: `/__partytown-proxy?:url`,
-    toPath: `/demos/rise-of-the-robots/__partytown-proxy?:url`,
+    fromPath: `/__partytown-proxy?url=:url`,
+    toPath: `/demos/rise-of-the-robots/__partytown-proxy?url=:url`,
     statusCode: 200,
   })
 }
