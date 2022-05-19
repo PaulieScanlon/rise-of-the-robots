@@ -11,7 +11,7 @@ exports.onPostBuild = ({ store }) => {
   console.log(`Applied redirects:`, redirects)
 }
 
-exports.onCreatePages = ({ actions }) => {
+exports.createPages = ({ actions }) => {
   const { createRedirect } = actions
 
   createRedirect({
@@ -21,8 +21,8 @@ exports.onCreatePages = ({ actions }) => {
   })
 
   createRedirect({
-    fromPath: `/__partytown-proxy?:url`,
-    toPath: `/demos/rise-of-the-robots/__partytown-proxy?:url`,
+    fromPath: `/__partytown-proxy?url=:url`,
+    toPath: `/demos/rise-of-the-robots/__partytown-proxy?url=:url`,
     statusCode: 200,
   })
 }
