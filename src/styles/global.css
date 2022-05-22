@@ -28,7 +28,7 @@
     @apply w-[280px] h-[224px] lg:w-[400px] lg:h-[345px];
   }
   .rive-border {
-    @apply absolute w-[280px] lg:w-[400px] bottom-[-40px] lg:bottom-[-20px];
+    @apply absolute w-[280px] lg:w-[400px] bottom-[-30px] lg:bottom-[-40px];
   }
   .gatsby-bot {
     @apply w-[250px] h-[240px] lg:w-[400px] lg:h-[400px];
