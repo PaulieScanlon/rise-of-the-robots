@@ -34,7 +34,7 @@
     @apply w-[250px] h-[240px] lg:w-[400px] lg:h-[400px];
   }
   .gatsby-border {
-    @apply absolute top-[-10px] w-[260px] ml-[-20px] lg:top-[-16px] lg:ml-[-64px] lg:w-[400px];
+    @apply absolute left-[26px] lg:left-[8px] top-[-15px] lg:top-[-18px] w-[260px]  h-[260px] ml-[-40px] lg:w-[400px] lg:h-[400px];
   }
   .form-bot-container {
     @apply relative flex justify-center overflow-hidden w-[280px] lg:w-[992px] lg:overflow-visible;
