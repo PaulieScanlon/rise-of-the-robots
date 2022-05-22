@@ -31,7 +31,8 @@ const HeroBot = () => {
     <RiveComponent
       role="img"
       aria-label="Hero Bot Animation"
-      className="hero-bot"
+      width={400}
+      height={400}
     />
   )
 }

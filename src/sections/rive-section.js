@@ -59,18 +59,14 @@ const RiveSection = () => {
           })}
         </div>
       </div>
-      <div className="relative lg:row-start-1 flex items-center justify-center">
+      <div className="relative rive-bot lg:row-start-1 flex items-center justify-center mx-auto">
         <img
           src={border.svg.dataURI}
           alt={border.title}
           className="rive-border"
         />
         {perfLoader ? (
-          <StaticImage
-            className="rive-bot"
-            src="../robots/rive-bot.png"
-            alt="Rive Bot Image"
-          />
+          <StaticImage src="../robots/rive-bot.png" alt="Rive Bot Image" />
         ) : (
           <Suspense fallback={<Loading />}>
             <RiveBot />

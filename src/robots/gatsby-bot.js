@@ -51,11 +51,12 @@ const GatsbyBot = () => {
   }, [rive, isVisible])
 
   return (
-    <div ref={ref} className="gatsby-bot">
+    <div ref={ref} className="w-full h-full">
       <RiveComponent
         role="img"
         aria-label="Gatsby Bot Animation"
-        className="gatsby-bot"
+        width={400}
+        height={400}
       />
     </div>
   )

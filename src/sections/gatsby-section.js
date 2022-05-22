@@ -58,7 +58,7 @@ const GatsbySection = () => {
           })}
         </div>
       </div>
-      <div className="relative flex items-center justify-center">
+      <div className="relative gatsby-bot flex items-center justify-center mx-auto">
         <img
           src={border.svg.dataURI}
           alt={border.title}
@@ -66,11 +66,7 @@ const GatsbySection = () => {
         />
 
         {perfLoader ? (
-          <StaticImage
-            className="gatsby-bot"
-            src="../robots/gatsby-bot.png"
-            alt="Gatsby Bot Image"
-          />
+          <StaticImage src="../robots/gatsby-bot.png" alt="Gatsby Bot Image" />
         ) : (
           <Suspense fallback={<Loading />}>
             <GatsbyBot />

@@ -97,9 +97,10 @@ const RiveBot = () => {
     <RiveComponent
       role="img"
       aria-label="Rive Bot Animation"
-      className="rive-bot"
       onMouseOver={handleMouseOver}
       onMouseLeave={handleMouseLeave}
+      width={400}
+      height={345}
     />
   )
 }

@@ -137,18 +137,14 @@ const HeroSection = () => {
           })}
         </div>
       </div>
-      <div className="relative lg:row-start-1 flex items-center justify-center">
+      <div className="relative hero-bot lg:row-start-1 flex items-center justify-center mx-auto">
         <img
           src={border.svg.dataURI}
           alt={border.title}
           className="hero-border"
         />
         {perfLoader ? (
-          <StaticImage
-            className="hero-bot"
-            src="../robots/hero-bot.png"
-            alt="Hero Bot Image"
-          />
+          <StaticImage src="../robots/hero-bot.png" alt="Hero Bot Image" />
         ) : (
           <Suspense fallback={<Loading />}>
             <HeroBot />
