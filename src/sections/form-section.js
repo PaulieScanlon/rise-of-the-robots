@@ -108,7 +108,7 @@ const FormSection = () => {
           <h2 className="text-2xl">{title}</h2>
           <ContentfulRichTech richText={description} />
         </div>
-        <div className="grid gap-2 justify-center mx-auto min-h-[90px] max-w-[380px]">
+        <div className="grid gap-2 justify-center mx-auto min-h-[90px]">
           <form
             onSubmit={handleSubmit}
             noValidate
@@ -130,7 +130,7 @@ const FormSection = () => {
               onChange={(e) => {
                 setEmail(e.target.value)
               }}
-              className="rounded-none text-brand-background px-2 py-1 grid-area-2 border-2 border-brand-secondary"
+              className="rounded-none text-brand-background px-2 py-1 grid-area-2 border-2 border-brand-secondary lg:w-[320px]"
             />
             <button
               type="submit"
