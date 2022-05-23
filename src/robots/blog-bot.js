@@ -55,7 +55,8 @@ const BlogBot = () => {
       <RiveComponent
         role="img"
         aria-label="Blog Bot Animation"
-        className="blog-bot"
+        width={380}
+        height={380}
       />
     </div>
   )
