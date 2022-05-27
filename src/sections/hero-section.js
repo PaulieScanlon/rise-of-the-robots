@@ -1,12 +1,10 @@
-import React, { lazy, Suspense } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import ContentfulRichTech from '../components/contentful-rich-text'
 
-import Loading from '../components/loading'
+import HeroBotLazy from '../robots/hero-bot-lazy'
 import usePerfLoading from '../hooks/use-perf-loading'
-
-const HeroBot = lazy(() => import('../robots/hero-bot'))
 
 const HeroSection = () => {
   const perfLoader = usePerfLoading()
@@ -146,9 +144,7 @@ const HeroSection = () => {
         {perfLoader ? (
           <StaticImage src="../robots/hero-bot.png" alt="Hero Bot Image" />
         ) : (
-          <Suspense fallback={<Loading />}>
-            <HeroBot />
-          </Suspense>
+          <HeroBotLazy />
         )}
       </div>
     </div>

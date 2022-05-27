@@ -1,12 +1,10 @@
-import React, { lazy, Suspense } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
+import FormBotLazy from '../robots/form-bot-lazy'
 import ContentfulRichTech from '../components/contentful-rich-text'
-import Loading from '../components/loading'
 import usePerfLoading from '../hooks/use-perf-loading'
-
-const FormBot = lazy(() => import('../robots/form-bot'))
 
 const NotFoundSection = () => {
   const perfLoader = usePerfLoading()
@@ -56,9 +54,7 @@ const NotFoundSection = () => {
             alt="Form Bot Image"
           />
         ) : (
-          <Suspense fallback={<Loading />}>
-            <FormBot hasError={true} />
-          </Suspense>
+          <FormBotLazy hasError={true} />
         )}
       </div>
       <div className="grid gap-8 text-center mx-auto max-w-section">

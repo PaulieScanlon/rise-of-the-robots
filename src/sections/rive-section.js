@@ -1,12 +1,10 @@
-import React, { lazy, Suspense } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import ContentfulRichTech from '../components/contentful-rich-text'
 
-import Loading from '../components/loading'
+import RiveBotLazy from '../robots/rive-bot-lazy'
 import usePerfLoading from '../hooks/use-perf-loading'
-
-const RiveBot = lazy(() => import('../robots/rive-bot'))
 
 const RiveSection = () => {
   const perfLoader = usePerfLoading()
@@ -68,9 +66,7 @@ const RiveSection = () => {
         {perfLoader ? (
           <StaticImage src="../robots/rive-bot.png" alt="Rive Bot Image" />
         ) : (
-          <Suspense fallback={<Loading />}>
-            <RiveBot />
-          </Suspense>
+          <RiveBotLazy />
         )}
       </div>
     </div>
