@@ -1,25 +1,24 @@
 import { useState, useEffect } from 'react'
 
-const QUERY_STRING = '(prefers-reduced-motion: no-preference)'
-const EVENT = 'change'
-
 const usePrefersReducedMotion = () => {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(true)
 
   useEffect(() => {
-    const query = window.matchMedia(QUERY_STRING)
+    const query = window.matchMedia('(prefers-reduced-motion: no-preference)')
 
-    setPrefersReducedMotion(!window.matchMedia(QUERY_STRING).matches)
+    setPrefersReducedMotion(!query.matches)
 
     const setState = (event) => {
       setPrefersReducedMotion(!event.matches)
     }
 
-    query.addEventListener(EVENT, setState)
+    query.addEventListener('change', setState)
+
     return () => {
-      query.removeEventListener(EVENT, setState)
+      query.removeEventListener('change', setState)
     }
   }, [])
+
   return prefersReducedMotion
 }
 
