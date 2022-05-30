@@ -39,6 +39,7 @@ const HeroSection = () => {
           type
           url
         }
+        altCta
         links {
           url
           name
@@ -81,6 +82,7 @@ const HeroSection = () => {
     eventDetails,
     hideButton,
     button: { text, type, url },
+    altCta,
     links,
     border,
   } = contentfulHeroSection
@@ -102,7 +104,9 @@ const HeroSection = () => {
             </div>
             <div className="grid gap-4 text-center lg:text-left justify-items-center lg:justify-items-start">
               <ContentfulRichTech richText={eventDetails} />
-              {hideButton ? null : (
+              {hideButton ? (
+                <div className="button button-disabled">{altCta}</div>
+              ) : (
                 <a
                   href={url}
                   target="_blank"

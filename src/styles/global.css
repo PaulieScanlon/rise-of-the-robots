@@ -69,6 +69,9 @@
   .button-ghost {
     @apply underline text-brand-secondary hover:text-white;
   }
+  .button-disabled {
+    @apply bg-brand-gray text-brand-background cursor-not-allowed;
+  }
   .grid-area-1 {
     grid-area: 1;
   }
