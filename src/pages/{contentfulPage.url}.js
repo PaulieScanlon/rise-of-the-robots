@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 
 import HeroSection from '../sections/hero-section'
 import WebinarSection from '../sections/webinar-section'
+import TrailerSection from '../sections/trailer-section'
 import GatsbySection from '../sections/gatsby-section'
 import RiveSection from '../sections/rive-section'
 import FormSection from '../sections/form-section'
@@ -16,6 +17,9 @@ const getSection = (__typename) => {
 
     case 'ContentfulWebinarSection':
       return <WebinarSection />
+
+    case 'ContentfulTrailerSection':
+      return <TrailerSection />
 
     case 'ContentfulGatsbySection':
       return <GatsbySection />
