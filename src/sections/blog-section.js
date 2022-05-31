@@ -1,12 +1,10 @@
-import React, { lazy, Suspense } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import ContentfulRichTech from '../components/contentful-rich-text'
 
-import Loading from '../components/loading'
+import BlogBotLazy from '../robots/blog-bot-lazy'
 import usePerfLoading from '../hooks/use-perf-loading'
-
-const BlogBot = lazy(() => import('../robots/blog-bot'))
 
 const BlogSection = () => {
   const perfLoader = usePerfLoading()
@@ -72,9 +70,7 @@ const BlogSection = () => {
             alt="Blot Bot Image"
           />
         ) : (
-          <Suspense fallback={<Loading />}>
-            <BlogBot />
-          </Suspense>
+          <BlogBotLazy />
         )}
       </div>
     </div>
